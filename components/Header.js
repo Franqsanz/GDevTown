@@ -4,7 +4,7 @@ export default function Header() {
   return (
     <>
       <nav>
-        <h1>Next'Blog</h1>
+        <h1>FranqBlog</h1>
         <div>
           <Link href='/'>
             <a>Blog</a>
@@ -16,7 +16,8 @@ export default function Header() {
       </nav>
       <style jsx>{`
         nav {
-          background: #444;
+          background: gold;
+          color: #000000;
           width: auto;
           padding: 0 2rem;
           display: flex;
@@ -27,6 +28,7 @@ export default function Header() {
         nav a {
           margin-right: 1rem;
           text-decoration: none;
+          color: #000000;
         }
         nav a:hover {
           text-decoration: underline;

@@ -2,7 +2,7 @@
 Clone this repository by running the following command:
 
 ```shell
-git clone https://github.com/me-io/nextjs-starter.git
+git clone https://github.com/Franqsanz/next-blog-starter.git
 ```
 
 Install the dependencies:

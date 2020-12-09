@@ -12,6 +12,7 @@ export default function Layout({ children, pageTitle, description, ...props }) {
       </Head>
       <style jsx global>{`
         @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap|Roboto:wght@400;700&display=swap');
+
         html,
         body {
           margin: 0;
@@ -19,10 +20,12 @@ export default function Layout({ children, pageTitle, description, ...props }) {
           font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
             Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
             sans-serif;
-          background: #333;
+          // background: #e4e4e4;
+          background: #1a1a1a;
           color: #fff;
           font-size: 1rem;
         }
+
         h1,
         h2,
         h3,
@@ -34,12 +37,28 @@ export default function Layout({ children, pageTitle, description, ...props }) {
             Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
             sans-serif;
         }
+
         a {
           color: #fff;
+          text-decoration: none;
         }
+
         .content {
-          max-width: 600px;
+          max-width: 700px;
           margin: 2rem auto;
+          // background: #eeeeee;
+          padding: 1rem;
+        }
+
+        pre {
+          background: #101010;
+          padding: 1rem;
+          border-radius: 5px;
+          overflow: auto;
+        }
+
+        code {
+          color: gold;
         }
       `}</style>
       <main>
