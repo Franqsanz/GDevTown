@@ -8,6 +8,23 @@ export default function Layout({ children, pageTitle, description, ...props }) {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <meta charSet='utf-8' />
         <meta name='Description' content={description}></meta>
+
+        <meta name="twitter:card" content="summary"></meta>
+        <meta name="twitter:title" content=""></meta>
+        <meta name="twitter:site" content="@Franqsanz"></meta>
+        <meta name="twitter:creator" content="@Franqsanz"></meta>
+        <meta name="twitter:url" content=""></meta>
+        <meta name="twitter:description" content=""></meta>
+        <meta name="twitter:image" content=""></meta>
+
+        <meta property="og:title" content=""></meta>
+        <meta property="og:site_name" content=""></meta>
+        <meta property="og:url" content=""></meta>
+        <meta property="og:locale" content="es_AR"></meta>
+        <meta property="og:description" content=""></meta>
+        <meta property="og:image" content=""></meta>
+        <meta property="og:image:width" content=""></meta>
+        <meta property="og:image:height" content=""></meta>
         <title>{pageTitle}</title>
       </Head>
       <style jsx global>{`
