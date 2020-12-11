@@ -4,7 +4,11 @@ export default function Header() {
   return (
     <>
       <nav>
-        <h1>FranqBlog</h1>
+        <Link href='/'>
+          <a>
+            <h1>FranqBlog</h1>
+          </a>
+        </Link>
         <div>
           <Link href='/'>
             <a>Blog</a>
@@ -25,11 +29,13 @@ export default function Header() {
           align-items: center;
           font-size: 1rem;
         }
+
         nav a {
           margin-right: 1rem;
           text-decoration: none;
           color: #000000;
         }
+
         nav a:hover {
           text-decoration: underline;
         }
