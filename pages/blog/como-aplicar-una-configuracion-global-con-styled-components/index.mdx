@@ -1,17 +1,31 @@
 import BlogPost from '../../../components/BlogPost'
-// import '../../../lib/docs';
-// import '../../../lib/markdown';
 
 export const meta = {
-  title: 'Como aplicar una configuración global con Styled Components',
-  description: '',
+  title: 'Como aplicar una configuración global con Styled Components o Styled JSX',
+  description: 'Aplicando la configuración global.',
   date: 'Dic 07, 2020',
   readTime: 2
 }
 
 export default ({ children }) => <BlogPost meta={meta}>{children}</BlogPost>;
 
-<!-- ## Ejemplo -->
+Hoy en día se a puesto muy de moda usar el concepto CSS-in-JS, básicamente es escribir CSS dentro de JavaScript, vaya la redundancia.
+
+En este post no voy a hablar por qué se creo este concepto y que beneficios tiene o desventajas, solo quiero explicar cómo se debe implementar una configuración global de los estilos, es bastante simple y quizás no era necesario escribir este post pero bueno puede servir.
+
+No tengo mucha experiencia en este concepto, al principio no entendía como se aplicaba una configuración global hasta que leí la documentación y vi algunos repositorios en github para ver cómo otros desarrolladores lo aplicaban.
+
+Existen varias librerías pero en este caso solo hablaré de Styled Components y Styled JSX.
+
+## Styled Components
+
+Creamos un archivo llamado `index.js` o `global.js` o el nombre que tú quieras y luego importamos Styled Components.
+
+```JS
+import { createGlobalStyle } from "styled-components";
+```
+Forma de aplicar la configuración global.
+
 Ejemplo:
 
 ```JS
@@ -39,6 +53,8 @@ export const Global = createGlobalStyle`
   }
 `;
 ```
+Luego debemos importar nuestra configuración global en el archivo principal de nuestro proyecto, por ejemplo en el `index.js`
+
 ```JS
 import React from "react";
 import { render } from "react-dom";
@@ -48,7 +64,7 @@ import { Global } from "./styles/index";
 function App() {
   return (
     <>
-      <Global />
+      <Global /> // Colocamos los estilos en la función principal del proyecto.
       <Header />
       <Footer />
     </>
@@ -59,8 +75,82 @@ const root = document.getElementById("root");
 
 render(<App />, root);
 ```
-```html
-<header>
-  <nav></nav>
-</header>
+
+## Styled JSX
+Está librería fue creada por Vercel la empresa que desarrollo y mantiene el framework NextJS.
+
+Para poder utilizar `Styled JSX` se debe hacer lo siguiente:
+
+```JS
+<style jsx>{``}</style>
 ```
+
+Se debe colocar las llaves y luego los literal String y dentro escribir los estilos.
+
+Para aplicar la configuración global se debe colocar el atributo `global` después del JSX, se vería así: `<style jsx global>`.
+
+Ejemplo:
+
+```JS
+<style jsx global>{`
+  :root {
+    --text-color: violet;
+  }
+
+  html,
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,  Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--text-color);
+  }
+
+  *, *::after, *::before {
+    margin: 0;
+  }
+
+`}</style>
+```
+
+En NextJS la configuración global debería estar en el archivo `Layout.js`, también vas a encontrar que se debe importar en el archivo `_app.js`.
+
+Ejemplo de `Layout.js`:
+
+```JS
+import Head from 'next/head'
+
+export default function Layout({ children, pageTitle, description, ...props }) {
+  return (
+    <>
+      <Head>
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
+        <meta charSet='utf-8' />
+        <meta name='Description' content={description}></meta>
+        <title>{pageTitle}</title>
+      </Head>
+      <style jsx global>{`
+        :root {
+          --text-color: violet;
+        }
+
+        html,
+        body {
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,  Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+          color: var(--text-color);
+        }
+
+        *, *::after, *::before {
+          margin: 0;
+        }
+
+      `}</style>
+    </>
+  );
+}
+```
+
+Cómo puedes ver es bastante simple, personalmente me gusta más Styled Components.
+
+Espero que este post tonto te sea de ayuda!
+
+Puedes leer esta lección de NextJS para más detalles: Global Styles NextJS.
+
+¡Cuídate y feliz codificación! 👍🏻

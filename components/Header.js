@@ -6,17 +6,9 @@ export default function Header() {
       <nav>
         <Link href='/'>
           <a>
-            <h1>FranqBlog</h1>
+            <h1>TownDev</h1>
           </a>
         </Link>
-        <div>
-          <Link href='/'>
-            <a>Blog</a>
-          </Link>
-          <Link href='/'>
-            <a>About</a>
-          </Link>
-        </div>
       </nav>
       <style jsx>{`
         nav {

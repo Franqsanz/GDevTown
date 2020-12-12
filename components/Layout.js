@@ -31,6 +31,7 @@ export default function Layout({ children, pageTitle, description, ...props }) {
 
       <style jsx global>{`
         @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap|Roboto:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap');
 
         html,
         body {
@@ -68,6 +69,10 @@ export default function Layout({ children, pageTitle, description, ...props }) {
           padding: 1rem;
         }
 
+        p {
+          line-height: 1.77;
+        }
+
         pre {
           background: #101010;
           padding: 1rem;
@@ -76,10 +81,11 @@ export default function Layout({ children, pageTitle, description, ...props }) {
         }
 
         code {
-          font-family: 'operator mono';
+          font-family: 'Inconsolata', monospace;
           font-weight: 300;
           font-size: 0.9rem;
           line-height: 1.77;
+          color: gold;
         }
 
         .language-JS {
