@@ -83,8 +83,11 @@ export default function Layout({ children, pageTitle, description, ...props }) {
           font-family: 'Inconsolata', monospace;
           font-weight: 300;
           font-size: 0.9rem;
-          line-height: 1.77;
+          line-height: 1.66;
           color: gold;
+          padding: 0.3rem;
+          background: #101010;
+          border-radius: 5px;
         }
 
         .language-JS {
@@ -93,6 +96,18 @@ export default function Layout({ children, pageTitle, description, ...props }) {
 
         .language-html {
           color: gold;
+        }
+
+        .language-CSS {
+          color: #17a1f6;
+        }
+
+        .language-JS,
+        .language-html,
+        .language-CSS {
+          padding: none
+          background: transparent;
+          border-radius: 0;
         }
       `}</style>
       <main>

@@ -1,0 +1,70 @@
+import BlogPost from '../../../components/BlogPost'
+
+export const meta = {
+  title: 'Cómo activar el modo oscuro en la web segun la preferencia del sistema operativo',
+  description: 'Build your first blog with Next JS',
+  date: 'Nov 25, 2020',
+  readTime: 2
+}
+
+export default ({ children }) => <BlogPost meta={meta}>{children}</BlogPost>;
+
+Hoy en día está muy de moda el "modo oscuro" en todas las plataformas, ya sea una app móvil, escritorio, sistema operativo o la misma web.
+
+Hay muchas formas de aplicar este, ya sea desde un botón que te dé la opción de elegir si quieres el tema claro o oscuro o también que se active según que preferencia elijas en el sistema operativo.
+Hoy vamos hablar de cómo activarlo según la preferencia del sistema.
+
+La verdad que es muy sencillo aplicarlo con `CSS` nativo sin utilizar librerías de terceros. Está idea fue desarrollada por Apple que agrego una `@media` query al lenguaje `CSS` la `@media (prefers-color-scheme: value)`,
+`value` puede ser:
+
+* `no-preference`: para indicar que el usuario no tiene una preferencia conocida en el sistema, actualmente no tiene soporte en el resto de los navegadores solo en safari.
+
+* `light`: para indicar colores claros.
+
+* `dark`: para indicar colores oscuros.
+
+Y solo funcionaba en el navegador safari pero ahora es compatible en todos los navegadores modernos.
+Puedes echar un vistazo en [caniuse](https://caniuse.com/?search=prefers-color-scheme) para ver el soporte en los navegadores.
+
+Ejemplo:
+
+```CSS
+:root {
+  --background-dark: #1A1A1A;
+  --background-light: #FFFFFF;
+  --color-dark: #191919;
+  --color-light: #EEEEEE;
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background: var(--background-light);
+    color: var(--color-dark);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: var(--background-dark);
+    color: var(--color-light);
+  }
+}
+```
+
+## Conclusión
+
+Cómo puedes ver es realmente muy sencillo aplicar esta configuración y con muy pocas líneas de código y funciona muy bien.
+
+#### Dejo algunos links
+
+* [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme)
+
+* [Un artículo de midu.dev](https://midu.dev/prefers-color-scheme-la-nueva-media-feature-de-css-para-detectar-el-aspecto-del-sistema-operativo-del-usuario/) que por cierto está mucho más detallado aunque tiene ya 1 año este post pero sigue siendo interesante, también encontrarás un ejemplo en codepen para que veas cómo funciona.
+
+* [web.dev](https://web.dev/prefers-color-scheme/) este artículo está muy detallado.
+
+---
+
+Espero que esté breve artículo te sea de utilidad y si ves algún error no dudes en mencionarlo en los comentarios. :)
+
+Gracias por leer!!

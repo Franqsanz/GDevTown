@@ -7,7 +7,7 @@ export const HeadPost = ({ meta, isBlogPost }) => (
     }
       <span>{meta.date}</span>
       <span role='img' aria-label='one coffee'>
-        ☕ {meta.readTime + ' min read'}
+        ☕ {meta.readTime + ' min de lectura'}
       </span>
     </div>
     <style jsx>

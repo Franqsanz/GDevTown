@@ -6,7 +6,7 @@ export default function Header() {
       <nav>
         <Link href='/'>
           <a>
-            <h1>TownDev</h1>
+            <h1>DevTown</h1>
           </a>
         </Link>
       </nav>

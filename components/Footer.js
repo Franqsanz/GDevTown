@@ -6,6 +6,8 @@ export default function Footer() {
         footer {
           padding: 1rem;
           text-align: center;
+          font-size: 0.9rem;
+          background: #101010;
         }
       `}</style>
     </>
