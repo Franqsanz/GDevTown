@@ -9,6 +9,11 @@ export default function Header() {
             <h1>DevTown</h1>
           </a>
         </Link>
+        <div>
+          <a href="https://twitter.com/franqsanz">Twitter</a>
+          <a href="https://linkedin.com/in/franqsanzdev">LinkedIn</a>
+          <a href="https://dev.to/franqsanz">Dev</a>
+        </div>
       </nav>
       <style jsx>{`
         nav {

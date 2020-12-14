@@ -10,7 +10,7 @@ export default function Layout({ children, pageTitle, description, ...props }) {
         <meta charSet='utf-8' />
         <meta name='Description' content={description} />
 
-        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:site" content="@Franqsanz" />
         <meta name="twitter:creator" content="@Franqsanz" />
@@ -32,6 +32,16 @@ export default function Layout({ children, pageTitle, description, ...props }) {
       <style jsx global>{`
         @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap|Roboto:wght@400;700&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap');
+
+        ::-webkit-scrollbar {
+          width: 7px;
+          background: none;
+        }
+
+        ::-webkit-scrollbar-thumb {
+          border-radius: 10px;
+          background: #ffc700;
+        }
 
         html,
         body {
@@ -64,8 +74,8 @@ export default function Layout({ children, pageTitle, description, ...props }) {
 
         .content {
           max-width: 700px;
-          margin: 2rem auto;
-          padding: 1rem;
+          margin: 1rem auto;
+          padding: 0.7rem;
         }
 
         p {

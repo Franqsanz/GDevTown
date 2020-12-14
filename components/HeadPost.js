@@ -1,3 +1,4 @@
+
 export const HeadPost = ({ meta, isBlogPost }) => (
   <>
     <h1 className={isBlogPost? 'great-title' :null} >{meta.title}</h1>
@@ -7,26 +8,27 @@ export const HeadPost = ({ meta, isBlogPost }) => (
     }
       <span>{meta.date}</span>
       <span role='img' aria-label='one coffee'>
-        ☕ {meta.readTime + ' min de lectura'}
+        ☕ {`${meta.readTime} min de lectura`}
+      </span>
+      <span>
+        Autor: ✍🏼 <a href={meta.postBy}>@Franqsanz</a>
       </span>
     </div>
-    <style jsx>
-      {`
-        h1 {
-          font-size: 1.5rem;
-          font-weight: 700;
-        }
-        .great-title {
-          font-size: 2rem;
-        }
-        .details span {
-          color: #bdbdbd;
-          margin-right: 1rem;
-        }
-        .details {
-          margin-bottom: 1rem;
-        }
-      `}
-    </style>
+    <style jsx>{`
+      h1 {
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+      .great-title {
+        font-size: 2rem;
+      }
+      .details span {
+        color: #bdbdbd;
+        margin-right: 1rem;
+      }
+      .details {
+        margin-bottom: 1rem;
+      }
+    `}</style>
   </>
 )
