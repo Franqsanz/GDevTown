@@ -5,15 +5,13 @@ export default function Header() {
     <>
       <nav>
         <Link href='/'>
-          <a>
-            <h1>DevTown</h1>
-          </a>
+          <a><h1>DevTown</h1></a>
         </Link>
-        <div>
-          <a href="https://twitter.com/franqsanz">Twitter</a>
-          <a href="https://linkedin.com/in/franqsanzdev">LinkedIn</a>
-          <a href="https://dev.to/franqsanz">Dev</a>
-        </div>
+        <ul>
+          <li><a href="https://twitter.com/franqsanz">Twitter</a></li>
+          <li><a href="https://linkedin.com/in/franqsanzdev">LinkedIn</a></li>
+          <li><a href="https://dev.to/franqsanz">Dev</a></li>
+        </ul>
       </nav>
       <style jsx>{`
         nav {
@@ -35,6 +33,14 @@ export default function Header() {
 
         nav a:hover {
           text-decoration: underline;
+        }
+
+        ul {
+          display: flex;
+        }
+
+        li {
+          list-style: none;
         }
       `}</style>
     </>
