@@ -15,6 +15,7 @@ export const Post = ({ post }) => {
           <a>Leer más &rarr;</a>
         </Link>
       </article>
+
       <style jsx>{`
         a {
           color: #ffc700;

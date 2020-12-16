@@ -5,7 +5,7 @@ export default function Header() {
     <>
       <nav>
         <Link href='/'>
-          <a><h1>DevTown</h1></a>
+          <a><h1>GDevTown</h1></a>
         </Link>
         <ul>
           <li><a href="https://twitter.com/franqsanz">
@@ -64,6 +64,18 @@ export default function Header() {
         .fa-dev {
           width: 25px;
           height: 25px;
+        }
+
+        @media (max-width: 425px) {
+           nav {
+            padding: 0 1rem;
+          }
+        }
+
+        @media (max-width: 325px) {
+           nav {
+            padding: 0 0.5rem;
+          }
         }
       `}</style>
     </>

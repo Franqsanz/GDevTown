@@ -26,6 +26,11 @@ export default function Layout({children, pageTitle, description, ...props }) {
         <meta property="og:image" content="" />
         <meta property="og:image:width" content="" />
         <meta property="og:image:height" content="" />
+
+        <meta name="application-name" content="GDevTown" />
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+        <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
         <title>{pageTitle}</title>
       </Head>
 
@@ -50,9 +55,8 @@ export default function Layout({children, pageTitle, description, ...props }) {
           font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
             Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
             sans-serif;
-          // background: #e4e4e4;
           background: #1a1a1a;
-          color: #fff;
+          color: #f3f3f3;
           font-size: 1rem;
         }
 
@@ -123,6 +127,7 @@ export default function Layout({children, pageTitle, description, ...props }) {
       <main>
         <Header />
         <div className='content'>{children}</div>
+        {/* <My /> */}
         <Footer />
       </main>
     </>
