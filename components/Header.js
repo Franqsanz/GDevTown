@@ -68,7 +68,7 @@ export default function Header() {
 
         @media (max-width: 425px) {
            nav {
-            padding: 0 1rem;
+            padding: 0 0.9rem;
           }
         }
 

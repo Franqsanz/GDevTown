@@ -9,6 +9,8 @@ export default function Layout({children, pageTitle, description, ...props }) {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <meta charSet='utf-8' />
         <meta name='Description' content={description} />
+        <meta name="application-name" content="GDevTown" />
+        <meta name="theme-color" content="#101010" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={pageTitle} />
@@ -27,7 +29,7 @@ export default function Layout({children, pageTitle, description, ...props }) {
         <meta property="og:image:width" content="" />
         <meta property="og:image:height" content="" />
 
-        <meta name="application-name" content="GDevTown" />
+        <link rel="canonical" href="" />
         <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
         <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
         <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />

@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <>
       <footer>
-        Blog personal por <a href="https://franqsanz.netlify.app/">Franco Andrés Sánchez</a>
+        Personal blog by <a href="https://franqsanz.netlify.app/">Franco Andrés Sánchez</a>
       </footer>
 
       <style jsx>{`
