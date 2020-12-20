@@ -7,10 +7,12 @@ export default function Layout({children, pageTitle, description, ...props }) {
     <>
       <Head>
         <meta name='viewport' content='width=device-width, initial-scale=1' />
+        <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
         <meta charSet='utf-8' />
         <meta name='Description' content={description} />
-        <meta name="application-name" content="GDevTown" />
+        <meta name="application-name" content={pageTitle} />
         <meta name="theme-color" content="#101010" />
+        <meta name="robots" content="follow, index" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={pageTitle} />

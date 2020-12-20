@@ -27,6 +27,7 @@ export default function Header() {
           </li>
         </ul>
       </nav>
+
       <style jsx>{`
         nav {
           background: gold;

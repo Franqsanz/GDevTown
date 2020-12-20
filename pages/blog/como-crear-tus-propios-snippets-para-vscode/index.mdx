@@ -1,0 +1,51 @@
+import BlogPost from '../../../components/BlogPost';
+import Image from 'next/image';
+
+export const meta = {
+  title: 'Como crear tus propios Snippets para VSCode',
+  description: 'Hoy te voy a mostrar como crear tus propios Snippets para Visual Studio Code sin necesidad de instalar una extensión.....',
+  date: 'Oct 21, 2020',
+  readTime: 1,
+  postBy: 'https://twitter.com/franqsanz'
+}
+
+export default ({ children }) => <BlogPost meta={meta}>{children}</BlogPost>;
+
+Hoy te voy a mostrar como crear tus propios Snippets para Visual Studio Code sin necesidad de instalar una extensión.
+
+⚠️ Spoiler Alert
+
+> Es muy fácil crear snippets. :)
+
+Empecemos
+Abre VSCode y haz lo siguiente:
+
+`Ctrl + P` e ingresa "preferences": "User Snippets" y elije el lenguaje que desee.
+
+Aquí un ejemplo para `JavaScript`:
+
+```Json
+{
+  "Require": [
+    "prefix": "req",
+    "body": [
+      "const name = require('');"
+    ],
+    "description": "Abreviación del código reservado require."
+  ]
+}
+```
+
+Después de esto guarda el archivo y crea un archivo `JavaScript` y coloca `req` que sería la abreviación de nuestro Snippets, VSCode auto completara mientras lo escribes y preciona la tecla tab o enter. Ahora tenemos un `require()` guardado en una constante.
+
+Un ejemplo es crear snippets para los meta tags
+
+Ejemplo:
+
+<Image src="/snippets1.jpg" width={803} height={320} alt="" />
+<Image src="/snippets2.jpg" width={880} height={353} alt="" />
+
+Y eso es ya lo tienes, ahora ya sabes como crear tus propios snippets, elige el lenguaje que desees y listo.
+Hasta puedes crear tu propia extensión. :)
+
+Gracias por leer!!
