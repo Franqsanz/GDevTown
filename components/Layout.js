@@ -18,20 +18,20 @@ export default function Layout({children, pageTitle, description, ...props }) {
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:site" content="@Franqsanz" />
         <meta name="twitter:creator" content="@Franqsanz" />
-        <meta name="twitter:url" content="" />
+        <meta name="twitter:url" content="https://gdevtown.netlify.app/" />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content="" />
 
         <meta property="og:title" content={pageTitle} />
-        <meta property="og:site_name" content="" />
-        <meta property="og:url" content="" />
+        <meta property="og:site_name" content="GDevTown" />
+        <meta property="og:url" content="https://gdevtown.netlify.app/" />
         <meta property="og:locale" content="es_AR" />
         <meta property="og:description" content={description} />
         <meta property="og:image" content="" />
         <meta property="og:image:width" content="" />
         <meta property="og:image:height" content="" />
 
-        <link rel="canonical" href="" />
+        <link rel="canonical" href="https://gdevtown.netlify.app/" />
         <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
         <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
         <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
@@ -90,6 +90,17 @@ export default function Layout({children, pageTitle, description, ...props }) {
           line-height: 1.77;
         }
 
+        blockquote {
+          border-left: 6px solid gold;
+          margin-inline-start: 0;
+          background: #101010;
+          border-radius: 0 5px 5px 0;
+        }
+
+        blockquote p {
+          padding: 0.7rem;
+        }
+
         pre {
           background: #101010;
           padding: 1rem;
@@ -110,6 +121,10 @@ export default function Layout({children, pageTitle, description, ...props }) {
 
         .language-JS {
           color: tomato;
+        }
+
+        .language-JSON {
+          color: orange;
         }
 
         .language-html {
