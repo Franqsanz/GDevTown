@@ -26,7 +26,6 @@ export const Post = ({ post }) => {
           padding: 1rem;
           background: #2a2a2a;
           border-radius: 5px;
-          // box-shadow: 0 5px 10px gray;
           border: 2px solid #4a4a4a;
         }
       `}</style>
