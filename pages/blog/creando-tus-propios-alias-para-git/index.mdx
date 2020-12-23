@@ -1,0 +1,62 @@
+import BlogPost from '../../../components/BlogPost';
+
+export const meta = {
+  title: 'Creando tus propios alias para Git',
+  description: '¿Alguna vez te preguntaste como crear tus propios alias para Git? Bueno hoy vas aprender a como crearlos, la verdad que es muy sencillo.....',
+  date: 'Oct 23, 2020',
+  readTime: 1,
+  postBy: 'https://twitter.com/franqsanz',
+}
+
+export default ({ children }) => <BlogPost meta={meta}>{children}</BlogPost>;
+
+¿Alguna vez te preguntaste como crear tus propios alias para Git?
+
+Bueno hoy vas aprender a como crearlos, la verdad que es muy sencillo.
+
+Lo primero que necesitamos es un archivo `Shell`, en este caso puede ser un `.bashrc` o `.zshrc`.
+
+Primero creamos nuestro archivo `.bashrc` o el `Shell` que utilizes, abrimos el terminal y pasamos el siguiente comando:
+
+```SH
+$ touch .bashrc
+```
+Esto creará el archivo de forma global y Git bash podrá acceder todo el tiempo.
+Luego abrimos el archivo y introducimos nuestros alias.
+
+Por ejemplo:
+
+```SH
+# .bashrc
+alias gph="git push"
+alias gcl="git clone"
+```
+Ahora reiniciamos el terminal y probamos nuestro alias `$ gph`.
+
+También hay otra forma de crear alias, es creando un archivo `.gitconfig`.
+
+Por ejemplo:
+
+```SH
+# .gitconfig
+[alias]
+  st = status
+  lg = log
+```
+
+Y también hay otra forma, desde el terminal.
+
+Por ejemplo:
+
+```SH
+$ git config --global alias.st status
+```
+
+Pero personalmente prefiero la primera opción.
+
+Y eso es todo, puedes ver algunos alias que tengo en mí [repositorio](https://github.com/Franqsanz/git-aliases).
+
+En dev.to hay cientos de artículos explicando esto y más profundos.
+Espero que está breve explicación te sea de ayuda!
+
+Gracias por leer !!!

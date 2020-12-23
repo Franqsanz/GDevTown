@@ -127,6 +127,10 @@ export default function Layout({children, pageTitle, description, ...props }) {
           color: orange;
         }
 
+        .language-SH {
+          color: lime;
+        }
+
         .language-html {
           color: gold;
         }
@@ -141,6 +145,11 @@ export default function Layout({children, pageTitle, description, ...props }) {
           padding: none
           background: transparent;
           border-radius: 0;
+        }
+
+        img {
+          max-width: 100%;
+          border-radius: 5px;
         }
       `}</style>
       <main>
