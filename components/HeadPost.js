@@ -10,25 +10,8 @@ export const HeadPost = ({ meta, isBlogPost }) => (
       </span> •
       <span>✍🏼 <a href={meta.postBy}>@Franqsanz</a></span>
     </div>
-    {/* <div className='Tags'>
-      <span className='cssTags'>{meta.tags.css}</span>
-      <span className='jsTags'>{meta.tags.js}</span>
-    </div> */}
 
     <style jsx>{`
-      // .cssTags,
-      // .jsTags {
-      //   background: #1a73e8;
-      //   color: #ffffff;
-      //   padding: 0.3rem;
-      //   border-radius: 5px;
-      // }
-
-      // .jsTags {
-      //   background: #ffc700;
-      //   color: #ffffff;
-      // }
-
       h1 {
         font-size: 1.5rem;
         font-weight: 700;
@@ -49,6 +32,12 @@ export const HeadPost = ({ meta, isBlogPost }) => (
 
       .details {
         margin-bottom: 1rem;
+      }
+
+      @media (max-width: 425px) {
+        .great-title {
+          font-size: 1.7rem;
+        }
       }
     `}</style>
   </>

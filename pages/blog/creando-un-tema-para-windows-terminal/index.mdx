@@ -1,0 +1,112 @@
+import BlogPost from '../../../components/BlogPost';
+
+export const meta = {
+  title: 'Creando un tema para Windows Terminal',
+  description: 'Crear un tema para la nueva terminal de windows es bastante simple. Solo necesitamos abrir la configuración del terminal, para abrir la configuración podemos hacerlo de dos formas:.....',
+  date: 'Oct 26, 2020',
+  readTime: 2,
+  postBy: 'https://twitter.com/franqsanz',
+}
+
+export default ({ children }) => <BlogPost meta={meta}>{children}</BlogPost>;
+
+Crear un tema para la nueva terminal de windows es bastante simple.
+
+Solo necesitamos abrir la configuración del terminal, para abrir la configuración podemos hacerlo de dos formas:
+
+1. Presionar `Ctrl +` ,
+
+2. Presionar el botón que se encuentra al lado de la pestaña, esto nos abrirá un menú, luego navegar hasta "configuración".
+
+Al abrir la configuración nos mostrará un archivo `json`. Solamente utilizaremos dos campos, el campo `profiles` y el campo `schemes`.
+
+## Creando y activando el tema 🎨
+Lo primero que debemos hacer es crear nuestro archivo `json`, si es que deseas compartir su tema con la comunidad, si no es así solamente debes agregar el esquema al campo `schemes` en `settings.json` que es el archivo de configuración del terminal.
+
+A continuación un ejemplo de como se ve un esquema de un tema, es bastante simple.
+
+Ejemplo del tema "Drácula"
+
+```JSON
+{
+  "name": "Dracula",
+  "cursorColor": "#F8F8F2",
+  "selectionBackground": "#44475A",
+  "background": "#282A36",
+  "foreground": "#F8F8F2",
+  "black": "#21222C",
+  "blue": "#BD93F9",
+  "cyan": "#8BE9FD",
+  "green": "#50FA7B",
+  "purple": "#FF79C6",
+  "red": "#FF5555",
+  "white": "#F8F8F2",
+  "yellow": "#F1FA8C",
+  "brightBlack": "#6272A4",
+  "brightBlue": "#D6ACFF",
+  "brightCyan": "#A4FFFF",
+  "brightGreen": "#69FF94",
+  "brightPurple": "#FF92DF",
+  "brightRed": "#FF6E6E",
+  "brightWhite": "#FFFFFF",
+  "brightYellow": "#FFFFA5"
+}
+```
+
+Para utilizar este tema solo debes agregarlo al campo `schemes`.
+
+Ejemplo:
+
+```JSON
+{
+  "schemes": [
+    {
+      // Aquí colocamos el
+      // esquema del tema.
+      // Por ejemplo el anterior.
+    }
+  ]
+}
+```
+
+Una vez que al tema lo hemos agregado, tenemos que activarlo desde el campo `profiles`.
+En este campo se encuentran las configuraciones de cada Shell.
+Por ejemplo:
+
+* Windows Power Shell
+
+* CMD
+
+Y los que tu agregues, como puede ser "bash" o "zsh".
+Cada sección de estos contiene un campo llamado `colorScheme` y es el que a nosotros nos interesa para activar el tema.
+
+Ejemplo:
+
+```JSON
+{
+  "profiles": [
+    {
+     "colorScheme": "Dracula"
+    }
+  ]
+}
+```
+Y así de sencillo es crear y agregar un tema en windows terminal.
+
+Solo lo que tienes que hacer es remplazar los colores en el esquema y darle un nombre y listo.
+
+## Links
+Algunos temas, pero puedes encontrar más en GitHub:
+* [Drácula](https://github.com/dracula/windows-terminal/)
+
+* [Night Owl](https://github.com/edurojasr/Windows-Terminal-Theme-Night-Owl)
+
+* [Cobalt2](https://github.com/Reidond/cobalt2-windows-terminal)
+
+* [Monokai Nigh](https://github.com/NickSeagull/windows-terminal-monokai-night)
+
+* También puedes echarle un vistazo a mí tema: [Alive](https://github.com/Franqsanz/alive)
+
+![alive mi tema](/alive.png)
+
+¡Feliz codificación!

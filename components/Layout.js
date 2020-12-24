@@ -32,9 +32,9 @@ export default function Layout({children, pageTitle, description, ...props }) {
         <meta property="og:image:height" content="" />
 
         <link rel="canonical" href="https://gdevtown.netlify.app/" />
-        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-        <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
-        <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="/favicon.png" sizes="16x16" />
         <title>{pageTitle}</title>
       </Head>
 
@@ -93,6 +93,7 @@ export default function Layout({children, pageTitle, description, ...props }) {
         blockquote {
           border-left: 6px solid gold;
           margin-inline-start: 0;
+          margin-inline-end: 0;
           background: #101010;
           border-radius: 0 5px 5px 0;
         }
@@ -103,7 +104,7 @@ export default function Layout({children, pageTitle, description, ...props }) {
 
         pre {
           background: #101010;
-          padding: 1rem;
+          padding: 1rem 0.7rem 1rem 0.7rem;
           border-radius: 5px;
           overflow: auto;
         }
@@ -151,11 +152,20 @@ export default function Layout({children, pageTitle, description, ...props }) {
           max-width: 100%;
           border-radius: 5px;
         }
+
+        hr {
+          background: #17a1f6;
+          width: 100px;
+          height: 1px;
+          border: 1px solid #0188db;
+          border-radius: 5px;
+          margin-block-start: 1.5em;
+          margin-block-end: 1.5em;
+        }
       `}</style>
       <main>
         <Header />
         <div className='content'>{children}</div>
-        {/* <My /> */}
         <Footer />
       </main>
     </>

@@ -19,13 +19,14 @@ export const Post = ({ post }) => {
       <style jsx>{`
         a {
           color: #ffc700;
+          font-size: 1.14rem;
         }
 
         article {
           margin-bottom: 2rem;
-          padding: 1rem;
           background: #2a2a2a;
           border-radius: 5px;
+          padding: 1rem;
           border: 2px solid #4a4a4a;
         }
       `}</style>
