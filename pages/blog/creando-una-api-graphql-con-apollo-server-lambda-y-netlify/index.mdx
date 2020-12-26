@@ -1,0 +1,202 @@
+import BlogPost from '../../../components/BlogPost';
+
+export const meta = {
+  title: 'Creando una API GraphQL con Apollo Server Lambda y Netlify',
+  description: 'Construir una API GraphQL con Apollo es realmente muy sencillo. Obviamente que esto depende del tamaño de nuestra API. Hace unos días empeze a desarrollar una API GraphQL con Apollo Server Lambda y Netlify Lambda.....',
+  date: 'Oct 20, 2020',
+  readTime: 4,
+  postBy: 'https://twitter.com/franqsanz',
+}
+
+export default ({ children }) => <BlogPost meta={meta}>{children}</BlogPost>;
+
+Construir una API GraphQL con Apollo es realmente muy sencillo. Obviamente que esto depende del tamaño de nuestra API.
+
+Hace unos días empeze a desarrollar una API GraphQL con Apollo Server Lambda y Netlify Lambda y quería compartir con ustedes lo sencillo que fue construirla.
+Aunque estuve con un poco de dolor de cabeza al momento de desplegar la API jajaja pero creo esto es normal ¿no?.
+
+## Manos a la obra 👷‍♂️
+Lo primero que debemos hacer es obviamente instalar nuestras dependencias para el proyecto.
+
+Instalar las siguientes dependencias:
+
+* apollo-server-lambda
+
+* graphql
+
+* netlify-lambda
+
+* encoding
+
+Una vez que tengamos nuestras dependencias instaladas abrimos el `package.json` y en el campo `scripts` colocamos lo siguiente:
+
+```JS
+"scripts": {
+  "start": "netlify-lambda serve src",
+  "build": "netlify-lambda build src"
+}
+```
+
+El `src` hace referencia al nombre de la carpeta que contendrá nuestros archivos (puede tener cualquier otro nombre), en este caso yo decidí por `src`.
+
+Ahora creemos un archivo `js` con el nombre graphql y requerimos ApolloServer.
+
+Un ejemplo a continuación.
+
+```JS
+const { ApolloServer } = require('apollo-server-lambda');
+
+const server = new ApolloServer({});
+
+exports.handler = server.createHandler();
+```
+Ahora podemos ejecutar nuestra api
+```SH
+$ npm start
+
+# o con yarn
+$ yarn start
+```
+
+Una vez ejecutada la API vamos al navegador y en la URL pasamos `localhost:9000/graphql` y nos mostrará el GraphQL Playground, pero aún no podremos hacer consultas ya que no hemos agregado un esquema y no hay datos.
+
+Ejemplo de como se ve el playground:
+
+![playground](/playground.png)
+
+## Creando los esquemas o typeDefs
+En una API GraphQL necesitamos crear esquemas o también llamados definición de tipos, es como validar la API o tambien puede ser considerado como un mapa de lo que recibiremos.
+
+Creamos un nuevo archivo.
+
+```JS
+const { gql } = require('apollo-server-lambda');
+
+const typeDefs = gql`
+  type users {
+    id: ID
+    username: String
+    name: String
+    lastname: String
+    age: Int
+  }
+
+  type Query {
+    Users: [users]
+  }
+`;
+
+module.exports = typeDefs;
+```
+
+Una vez que tengamos nuestros typeDefs es hora de pedir los datos respetando este esquema.
+
+## Creando los resolvers
+En GraphQL existen los `resolvers`, que son los que resolverán nuestro `typeDefs`, osea son los encargados de traer los datos respetando los `typeDefs`.
+
+Creamos un nuevo archivo.
+
+```JS
+// Ejemplo si los datos estarían en un archivo estático.
+const users = require('./data');
+
+const resolvers = {
+  Query: {
+   Users: () => users
+  }
+};
+
+module.exports = resolvers;
+```
+
+Aquí es donde nosotros haríamos las consultas a la base de datos o aún archivo estático. Una vez que tengamos los `typeDefs` y `resolvers` listos, tenemos que pasarlos a la configuración del server.
+
+Volvemos al archivo graphql
+
+```JS
+const { ApolloServer } = require('apollo-server-lambda');
+const typeDefs = require('./typeDefs');
+const resolvers = require('./resolvers');
+
+const server = new ApolloServer({
+  typeDefs,
+  resolvers
+});
+
+exports.handler = server.createHandler();
+```
+
+ApolloServer es un objeto y se pueden pasar muchas más opciones pero como mínimo debe tener estos dos.
+Ahora si volvemos a ejecutar nuestra API esta vez podremos hacer consultas en el playground.
+
+Ejemplo:
+
+```GraphQL
+query allUsers {
+  Users {
+   id
+   username
+   name
+   lastname
+   age
+ }
+}
+```
+Respuesta:
+```JSON
+{
+ "data": {
+  "Users": [
+    {
+      "id": "1",
+      "username": "Franqsanz",
+      "name": "Franco Andrés",
+      "lastname": "Sánchez",
+      "age": 23
+    },
+    //...
+  ]
+ }
+}
+```
+Ahora que tenemos nuestra API lista podemos desplegar a Netlify pero primero necesitamos un archivo llamado `netlify.toml` que contendrá la configuración para Netlify.
+Este archivo debe ir en la raíz del proyecto.
+
+Ejemplo de como se ve un archivo `netlify.toml`:
+
+```TOML
+[build]
+  command = "npm run build" # o con yarn: "yarn build".
+  functions = "functions" # este comando creará una carpeta llamada "functions" y guardara las funciones Lambda.
+  publish = "src" # carpeta que contiene los archivos del proyecto.
+
+[[redirects]]
+  from = "/graphql"
+  to = "./netlify/functions/graphql"
+  status = 200
+  force = true
+```
+El comando `functions` creará una carpeta con el nombre que nosotros le demos en este caso yo decidí llamarlo `functions`, pero puede ser `lambda` por ejemplo. Tu no tienes que preocuparte por esta carpeta, se creará automáticamente cuando ejecutes el proyecto.
+Esta son las funciones Lambda, pero no voy a profundizar en el tema por qué no tengo mucho conocimiento aún.
+
+## Desplegando a Netlify 🚀
+Una vez que tengamos todo listo es hora de desplegar la API, primero creamos un repositorio en github para así tener despliegue continuo a Netlify, luego crearse una cuenta en Netlify o si ya tienes una inicia sesión, ahora solo debes agregar este repositorio a Netlify y esperar que se implemente.
+
+Si te haz dado cuenta hay una dependencia que no hemos usado `encoding` está dependencia lo usará Netlify, por lo menos en mí caso debí instalarla ya que me daba un error al momento del despliegue.
+
+Si todo salió bien ya podrás ver tu API en producción con el CDN generado y probar cómo funciona.
+
+## Conclusión
+Este fue una breve introducción de como crear una API GraphQL y desplegar en Netlify con funciones Lambda, hay mucho más por aprender y hay muy buenos artículos en internet. Espero que te haya sido útil este artículo.
+
+Puedes ver mí API en github por si tienes dudas.
+
+[Ver API en GitHub](https://github.com/Franqsanz/fruits-api)
+
+[Ver API en producción](https://fruits-api.netlify.app/graphql)
+
+Puedes forquear o clonar el repositorio y mejorarlo. 👍🏻
+
+Si llegaste hasta aquí wow muchas gracias por leer!!! 💛
+
+Me puedes encontrar en [Twitter](https://twitter.com/franqsanz).

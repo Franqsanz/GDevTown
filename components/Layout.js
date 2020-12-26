@@ -20,21 +20,21 @@ export default function Layout({children, pageTitle, description, ...props }) {
         <meta name="twitter:creator" content="@Franqsanz" />
         <meta name="twitter:url" content="https://gdevtown.netlify.app/" />
         <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content="" />
+        <meta name="twitter:image" content="https://gdevtown.netlify.app/icons/og.jpg" />
 
         <meta property="og:title" content={pageTitle} />
-        <meta property="og:site_name" content="GDevTown" />
+        <meta property="og:site_name" content={pageTitle} />
         <meta property="og:url" content="https://gdevtown.netlify.app/" />
         <meta property="og:locale" content="es_AR" />
         <meta property="og:description" content={description} />
-        <meta property="og:image" content="" />
-        <meta property="og:image:width" content="" />
-        <meta property="og:image:height" content="" />
+        <meta property="og:image" content="https://gdevtown.netlify.app/icons/og.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="500" />
 
         <link rel="canonical" href="https://gdevtown.netlify.app/" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32" />
-        <link rel="icon" type="image/png" href="/favicon.png" sizes="16x16" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon180.png" />
+        <link rel="icon" type="image/png" href="/icons/favicon32.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="/icons/favicon16.png" sizes="16x16" />
         <title>{pageTitle}</title>
       </Head>
 
