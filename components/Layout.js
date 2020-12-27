@@ -140,6 +140,14 @@ export default function Layout({children, pageTitle, description, ...props }) {
           color: #17a1f6;
         }
 
+        .language-GraphQL {
+          color: #ff87e1;
+        }
+
+        .language-TOML {
+          color: #63c9c1;
+        }
+
         .language-JS,
         .language-html,
         .language-CSS {

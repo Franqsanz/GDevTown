@@ -1,0 +1,61 @@
+import BlogPost from '../../../components/BlogPost';
+
+export const meta = {
+  title: 'Una extensión para detectar los "aria-label" no aplicados en etiquetas HTML',
+  description: 'Quería compartir con ustedes un proyecto que hice hace unos meses.....',
+  date: 'Oct 28, 2020',
+  readTime: 2,
+  postBy: 'https://twitter.com/franqsanz',
+}
+
+export default ({ children }) => <BlogPost meta={meta}>{children}</BlogPost>;
+
+Quería compartir con ustedes un proyecto que hice hace unos meses.
+
+Cree una extensión para el navegador que detecta los `aria-label` no aplicados en las etiquetas `HTML` que para mí personalmente son las más importantes.
+
+Es muy sencilla en realidad, solo se inyecta un código `CSS`, que marca un borde amarillo en las etiquetas que no sea detectado el `aria-label`.
+
+Por ejemplo un `button` que cierre un menú.
+
+Ejemplo:
+
+```HTML
+<button type="button" aria-label="Cerrar Menú">X</button>
+```
+
+Si no contiene este atributo la extensión marcara un borde amarillo en el botón.
+
+Otro ejemplo puede ser al abrir un menú, más que seguro que vas a encontrar el famoso menú hamburguesa y ahí de nuevo necesitas declarar este atributo.
+
+Es bastante normal ver botones que cierran menús con un icono de `X` o directamente una "X", solo pregúntate ¿como leé el lector de pantalla este botón o mejor como se lo pronuncia a una persona con baja visión o que directamente no tiene visión?, Bueno para eso es este atributo, obviamente que hay muchos más atributos `aria`.
+
+Ejemplo de como se ve:
+
+![aria-detect](/aria-detect.png)
+
+Hay cientos de ejemplos en etiquetas `HTML` que puede ser aplicado este atributo.
+
+Y si te haz preguntado como funciona esto, osea como sabe la extensión que ahí no hay un `aria-label`, bueno solo es un `CSS`.
+Funciona de la siguiente manera:
+
+```CSS
+button:not([aria-label]) {
+  outline: 2px dashed #ffd900 !important;
+}
+```
+Es muy fácil entender esto, si no hay un `aria-label` pinta un `outline` de `2px` tipo `dashed` que es una línea con puntos como se ve en la imagen y el color, el `!important` es necesario por qué es un `CSS` inyectado a una X página, si no colocamos esto, el `CSS` no se inyectará correctamente.
+
+No voy a profundizar en como crear una extensión, quizás lo deje para otro artículo.
+Solo quería compartir esta idea con ustedes.
+
+## Conclusión
+Por ahora esta extensión solo hace esto, no hay nada programado. Está muy "verde" aún, pero creo que es un paso.
+
+Está extensión no está publicada, solo en github.
+
+Puedes ver el repositorio y mirar que es muy sencillo en realidad.
+
+Repo: [aria detect extensión](https://github.com/Franqsanz/aria-detect-extension)
+
+Gracias por leer!!!
