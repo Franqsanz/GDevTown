@@ -9,7 +9,8 @@ export default function Layout({children, pageTitle, description, ...props }) {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
         <meta charSet='utf-8' />
-        <meta name='Description' content={description} />
+        <meta name='description' content={description} />
+        <meta name='image' content="/icons/favicon32.png" />
         <meta name="application-name" content={pageTitle} />
         <meta name="theme-color" content="#101010" />
         <meta name="robots" content="follow, index" />
