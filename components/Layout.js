@@ -10,8 +10,9 @@ export default function Layout({children, pageTitle, description, ...props }) {
         <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
         <meta charSet='utf-8' />
         <meta name='description' content={description} />
-        <meta name='image' content="/icons/favicon32.png" />
         <meta name="application-name" content={pageTitle} />
+        <meta name='image' content="/icons/favicon32.png" />
+        <meta name="apple-mobile-web-app-title" content={pageTitle} />
         <meta name="theme-color" content="#101010" />
         <meta name="robots" content="follow, index" />
 
@@ -23,14 +24,16 @@ export default function Layout({children, pageTitle, description, ...props }) {
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content="https://gdevtown.netlify.app/icons/og.jpg" />
 
+        <meta property="og:type" content="article" />
         <meta property="og:title" content={pageTitle} />
         <meta property="og:site_name" content={pageTitle} />
         <meta property="og:url" content="https://gdevtown.netlify.app/" />
         <meta property="og:locale" content="es_AR" />
         <meta property="og:description" content={description} />
         <meta property="og:image" content="https://gdevtown.netlify.app/icons/og.jpg" />
+        <meta property="og:image:alt" content="" />
         <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="500" />
+        <meta property="og:image:height" content="650" />
 
         <link rel="canonical" href="https://gdevtown.netlify.app/" />
         <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon180.png" />
