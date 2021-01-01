@@ -18,7 +18,7 @@ export const Post = ({ post }) => {
 
       <style jsx>{`
         a {
-          color: #ffc700;
+          color: var(--goldDark);
           font-size: 1.14rem;
         }
 

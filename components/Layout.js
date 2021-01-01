@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Footer from './Footer';
 import Header from './Header';
+import Sect from './SectMore';
 
 export default function Layout({children, pageTitle, description, ...props }) {
   return (
@@ -46,6 +47,14 @@ export default function Layout({children, pageTitle, description, ...props }) {
         @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap|Roboto:wght@400;700&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap');
 
+        :root {
+          --goldDark: #ffc700;
+          --grayBackground: #1a1a1a;
+          --grayDark: #101010;
+          --black: #000000;
+          --colorWhite: #f3f3f3;
+        }
+
         ::-webkit-scrollbar {
           width: 7px;
           background: none;
@@ -53,7 +62,7 @@ export default function Layout({children, pageTitle, description, ...props }) {
 
         ::-webkit-scrollbar-thumb {
           border-radius: 10px;
-          background: #ffc700;
+          background: var(--goldDark);
         }
 
         html,
@@ -63,8 +72,8 @@ export default function Layout({children, pageTitle, description, ...props }) {
           font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
             Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
             sans-serif;
-          background: #1a1a1a;
-          color: #f3f3f3;
+          background: var(--grayBackground);
+          color: var(--colorWhite);
           font-size: 1rem;
         }
 
@@ -98,7 +107,7 @@ export default function Layout({children, pageTitle, description, ...props }) {
           border-left: 6px solid gold;
           margin-inline-start: 0;
           margin-inline-end: 0;
-          background: #101010;
+          background: var(--grayDark);
           border-radius: 0 5px 5px 0;
         }
 
@@ -107,7 +116,7 @@ export default function Layout({children, pageTitle, description, ...props }) {
         }
 
         pre {
-          background: #101010;
+          background: var(--grayDark);
           padding: 1rem 0.7rem 1rem 0.7rem;
           border-radius: 5px;
           overflow: auto;
@@ -120,7 +129,7 @@ export default function Layout({children, pageTitle, description, ...props }) {
           line-height: 1.66;
           color: gold;
           padding: 0.3rem;
-          background: #101010;
+          background: var(--grayDark);
           border-radius: 5px;
         }
 
@@ -177,7 +186,10 @@ export default function Layout({children, pageTitle, description, ...props }) {
       `}</style>
       <main>
         <Header />
-        <div className='content'>{children}</div>
+        <div className='content'>
+          {children}
+        <Sect />
+        </div>
         <Footer />
       </main>
     </>

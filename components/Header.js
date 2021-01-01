@@ -32,8 +32,8 @@ export default function Header() {
 
       <style jsx>{`
         nav {
-          background: #ffc700;
-          color: #000000;
+          background: var(--goldDark);
+          color: var(--black);
           width: auto;
           padding: 0 2rem;
           display: flex;
@@ -45,7 +45,7 @@ export default function Header() {
         nav a {
           margin-right: 1rem;
           text-decoration: none;
-          color: #000000;
+          color: var(--black);
         }
 
         nav a:hover {
