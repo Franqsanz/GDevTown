@@ -25,7 +25,7 @@ export const Post = ({ post }) => {
         article {
           margin-bottom: 2rem;
           background: #2a2a2a;
-          border-radius: 5px;
+          border-radius: var(--radius5);
           padding: 1rem;
           border: 2px solid #4a4a4a;
         }

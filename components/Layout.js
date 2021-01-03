@@ -53,6 +53,7 @@ export default function Layout({children, pageTitle, description, ...props }) {
           --grayDark: #101010;
           --black: #000000;
           --colorWhite: #f3f3f3;
+          --radius5: 5px;
         }
 
         ::-webkit-scrollbar {
@@ -108,7 +109,7 @@ export default function Layout({children, pageTitle, description, ...props }) {
           margin-inline-start: 0;
           margin-inline-end: 0;
           background: var(--grayDark);
-          border-radius: 0 5px 5px 0;
+          border-radius: 0 var(--radius5) var(--radius5) 0;
         }
 
         blockquote p {
@@ -118,7 +119,7 @@ export default function Layout({children, pageTitle, description, ...props }) {
         pre {
           background: var(--grayDark);
           padding: 1rem 0.7rem 1rem 0.7rem;
-          border-radius: 5px;
+          border-radius: var(--radius5);
           overflow: auto;
         }
 
@@ -130,7 +131,7 @@ export default function Layout({children, pageTitle, description, ...props }) {
           color: gold;
           padding: 0.3rem;
           background: var(--grayDark);
-          border-radius: 5px;
+          border-radius: var(--radius5);
         }
 
         .language-JS {
@@ -171,7 +172,7 @@ export default function Layout({children, pageTitle, description, ...props }) {
 
         img {
           max-width: 100%;
-          border-radius: 5px;
+          border-radius: var(--radius5);
         }
 
         hr {
@@ -179,7 +180,7 @@ export default function Layout({children, pageTitle, description, ...props }) {
           width: 100px;
           height: 1px;
           border: 1px solid #0188db;
-          border-radius: 5px;
+          border-radius: var(--radius5);
           margin-block-start: 1.5em;
           margin-block-end: 1.5em;
         }

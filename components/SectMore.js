@@ -2,26 +2,21 @@ export default function MoreInfo() {
   return (
     <>
       <section>
-        <h2>Todos estos artículos los podrás encontrar en <a href="https://dev.to/franqsanz">DEV Community.</a></h2>
+        <h3>Todos estos artículos los podrás encontrar en <a href="https://dev.to/franqsanz">DEV Community.</a></h3>
       </section>
 
       <style jsx>{`
         section {
           text-align: center;
-          padding: 0.6rem;
+          padding: 0.9rem;
           margin-top: 2rem;
-          background: var(--grayDark);
-          border-radius: 50px;
+          background: linear-gradient(0deg, var(--grayDark), 45%, var(--goldDark));
+          border-radius: 5px;
+          color: var(--black);
         }
 
-        h2 {
-          font-size: 1rem;
-        }
-
-        @media (max-width: 425px) {
-          section {
-            font-size: 1.3rem;
-          }
+        h3 {
+          font-size: 0.9rem;
         }
       `}</style>
     </>
