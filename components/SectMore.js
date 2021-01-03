@@ -10,9 +10,8 @@ export default function MoreInfo() {
           text-align: center;
           padding: 0.9rem;
           margin-top: 2rem;
-          background: linear-gradient(0deg, var(--grayDark), 45%, var(--goldDark));
-          border-radius: 5px;
-          color: var(--black);
+          background: var(--grayDark);
+          border-radius: var(--radius5);
         }
 
         h3 {
