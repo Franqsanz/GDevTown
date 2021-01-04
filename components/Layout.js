@@ -14,7 +14,7 @@ export default function Layout({children, pageTitle, description, ...props }) {
         <meta name="application-name" content={pageTitle} />
         <meta name='image' content="/icons/favicon32.png" />
         <meta name="apple-mobile-web-app-title" content={pageTitle} />
-        <meta name="theme-color" content="#101010" />
+        <meta name="theme-color" content="#17a1f6" />
         <meta name="robots" content="follow, index" />
 
         <meta name="twitter:card" content="summary_large_image" />

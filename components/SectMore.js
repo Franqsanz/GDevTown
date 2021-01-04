@@ -12,6 +12,7 @@ export default function MoreInfo() {
           margin-top: 2rem;
           background: var(--grayDark);
           border-radius: var(--radius5);
+          border: 2px solid var(--goldDark);
         }
 
         h3 {
