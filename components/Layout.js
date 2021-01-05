@@ -32,12 +32,13 @@ export default function Layout({children, pageTitle, description, ...props }) {
         <meta property="og:locale" content="es_AR" />
         <meta property="og:description" content={description} />
         <meta property="og:image" content="https://gdevtown.netlify.app/icons/og.jpg" />
-        <meta property="og:image:alt" content="" />
+        <meta property="og:image:alt" content={pageTitle} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="650" />
 
         <link rel="canonical" href="https://gdevtown.netlify.app/" />
         <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon180.png" />
+        <link rel="icon" sizes="64x64" href="/icons/favicon64.png" type="image/png" />
         <link rel="icon" type="image/png" href="/icons/favicon32.png" sizes="32x32" />
         <link rel="icon" type="image/png" href="/icons/favicon16.png" sizes="16x16" />
         <title>{pageTitle}</title>
