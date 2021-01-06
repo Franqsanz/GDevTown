@@ -9,9 +9,10 @@ export default function MoreInfo() {
         section {
           text-align: center;
           padding: 0.9rem;
-          margin-top: 4 b rem;
+          margin-top: 4rem;
           background: var(--grayDark);
           border-radius: var(--radius5);
+          box-shadow: 0 0 15px var(--goldDark);
           border: 2px solid var(--goldDark);
         }
 

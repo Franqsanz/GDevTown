@@ -67,6 +67,14 @@ export default function Header() {
         .fa-dev {
           width: 25px;
           height: 25px;
+          transition: .2s;
+        }
+
+        .fa-twitter:hover,
+        .fa-linkedin:hover,
+        .fa-github:hover,
+        .fa-dev:hover {
+          color: #168bd3;
         }
 
         @media (max-width: 425px) {
