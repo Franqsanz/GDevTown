@@ -9,11 +9,23 @@ export default function MoreInfo() {
         section {
           text-align: center;
           padding: 0.9rem;
-          margin-top: 4rem;
-          background: var(--grayDark);
+          margin-top: 5rem;
           border-radius: var(--radius5);
           box-shadow: 0 0 15px var(--goldDark);
           border: 2px solid var(--goldDark);
+        }
+
+        @media (prefers-color-scheme: light) {
+          section {
+            background: var(--whiteBackground);
+            box-shadow: none;
+          }
+        }
+
+        @media (prefers-color-scheme: dark) {
+          section {
+            background: var(--grayDark);
+          }
         }
 
         h3 {

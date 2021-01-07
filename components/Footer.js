@@ -12,6 +12,12 @@ export default function Footer() {
           font-size: 0.9rem;
           background: #0c0c0c;
         }
+
+        @media (prefers-color-scheme: light) {
+          footer {
+            color: var(--colorWhite);
+          }
+        }
       `}</style>
     </>
   );

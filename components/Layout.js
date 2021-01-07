@@ -37,8 +37,9 @@ export default function Layout({children, pageTitle, description, ...props }) {
         <meta property="og:image:height" content="650" />
 
         <link rel="canonical" href="https://gdevtown.netlify.app/" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon180.png" />
-        <link rel="icon" sizes="64x64" href="/icons/favicon64.png" type="image/png" />
+        <link rel="apple-touch-icon"  href="/icons/apple-touch-icon180.png" sizes="180x180" />
+        <link rel="icon" type="image/png" href="/icons/favicon72.png" sizes="72x72" />
+        <link rel="icon" type="image/png" href="/icons/favicon64.png" sizes="64x64" />
         <link rel="icon" type="image/png" href="/icons/favicon32.png" sizes="32x32" />
         <link rel="icon" type="image/png" href="/icons/favicon16.png" sizes="16x16" />
         <title>{pageTitle}</title>
@@ -55,6 +56,26 @@ export default function Layout({children, pageTitle, description, ...props }) {
           --black: #000000;
           --colorWhite: #f3f3f3;
           --radius5: 5px;
+
+          // light theme
+          --whiteBackground: #eaeaea;
+          --colorGray: #2a2a2a;
+        }
+
+        @media (prefers-color-scheme: light) {
+          html,
+          body {
+            background: var(--whiteBackground);
+            color: var(--colorGray);
+          }
+        }
+
+        @media (prefers-color-scheme: dark) {
+          html,
+          body {
+            background: var(--grayBackground);
+            color: var(--colorWhite);
+          }
         }
 
         ::-webkit-scrollbar {
@@ -70,12 +91,9 @@ export default function Layout({children, pageTitle, description, ...props }) {
         html,
         body {
           margin: 0;
-          padding: 0;
           font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
             Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
             sans-serif;
-          background: var(--grayBackground);
-          color: var(--colorWhite);
           font-size: 1rem;
         }
 

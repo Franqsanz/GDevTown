@@ -22,8 +22,19 @@ export const HeadPost = ({ meta, isBlogPost }) => (
       }
 
       .details {
-        color: #bdbdbd;
         margin-right: 1rem;
+      }
+
+      @media (prefers-color-scheme: light) {
+        .details {
+          color: #464646;
+        }
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .details {
+          color: #bdbdbd;
+        }
       }
 
       span {

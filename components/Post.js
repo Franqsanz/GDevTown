@@ -24,11 +24,28 @@ export const Post = ({ post }) => {
 
         article {
           margin-bottom: 2rem;
-          background: #2a2a2a;
           border-radius: var(--radius5);
           padding: 1rem;
-          border: 2px solid #4a4a4a;
         }
+
+        @media (prefers-color-scheme: light) {
+          article {
+            background: #d6d6d6;
+            border: 2px solid #ababab;
+          }
+
+          a {
+            color: #17a1f6;
+          }
+        }
+
+        @media (prefers-color-scheme: dark) {
+          article {
+            background: #2a2a2a;
+            border: 2px solid #4a4a4a;
+          }
+        }
+
       `}</style>
     </>
   )
