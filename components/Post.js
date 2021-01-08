@@ -1,5 +1,5 @@
-import Link from 'next/link'
-import { HeadPost } from './HeadPost'
+import Link from 'next/link';
+import { HeadPost } from './HeadPost';
 
 export const Post = ({ post }) => {
   const {
@@ -20,6 +20,7 @@ export const Post = ({ post }) => {
         a {
           color: var(--goldDark);
           font-size: 1.14rem;
+          font-weight: bold;
         }
 
         article {
@@ -35,7 +36,7 @@ export const Post = ({ post }) => {
           }
 
           a {
-            color: #17a1f6;
+            color: #0f527b;
           }
         }
 

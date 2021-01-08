@@ -68,6 +68,14 @@ export default function Layout({children, pageTitle, description, ...props }) {
             background: var(--whiteBackground);
             color: var(--colorGray);
           }
+
+          blockquote {
+            background: #d6d6d6;
+          }
+
+          a {
+            color: #0f527b;
+          }
         }
 
         @media (prefers-color-scheme: dark) {
@@ -75,6 +83,14 @@ export default function Layout({children, pageTitle, description, ...props }) {
           body {
             background: var(--grayBackground);
             color: var(--colorWhite);
+          }
+
+          blockquote {
+            background: var(--grayDark);
+          }
+
+          a {
+            color: #17a1f6;
           }
         }
 
@@ -109,10 +125,6 @@ export default function Layout({children, pageTitle, description, ...props }) {
             sans-serif;
         }
 
-        a {
-          color: #17a1f6;
-        }
-
         .content {
           max-width: 700px;
           margin: 1rem auto;
@@ -127,7 +139,6 @@ export default function Layout({children, pageTitle, description, ...props }) {
           border-left: 6px solid gold;
           margin-inline-start: 0;
           margin-inline-end: 0;
-          background: var(--grayDark);
           border-radius: 0 var(--radius5) var(--radius5) 0;
         }
 

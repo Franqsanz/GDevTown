@@ -17,7 +17,7 @@ export default function MoreInfo() {
 
         @media (prefers-color-scheme: light) {
           section {
-            background: var(--whiteBackground);
+            background: #d6d6d6;
             box-shadow: none;
           }
         }
