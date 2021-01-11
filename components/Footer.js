@@ -15,7 +15,7 @@ export default function Footer() {
 
         @media (prefers-color-scheme: light) {
           footer {
-            color: var(--colorWhite);
+            background: #d6d6d6;
           }
         }
       `}</style>

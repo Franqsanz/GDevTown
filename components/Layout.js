@@ -58,7 +58,7 @@ export default function Layout({children, pageTitle, description, ...props }) {
           --radius5: 5px;
 
           // light theme
-          --whiteBackground: #eaeaea;
+          --whiteBackground: #f3f3f3;
           --colorGray: #2a2a2a;
         }
 

@@ -9,12 +9,12 @@ export const Post = ({ post }) => {
 
   return (
     <>
-      <article>
-        <HeadPost meta={meta} />
-        <Link href={'/blog' + link}>
-          <a>Leer más &rarr;</a>
-        </Link>
-      </article>
+      <Link href={'/blog' + link}>
+        <article>
+          <HeadPost meta={meta} />
+            <a>Leer más &rarr;</a>
+        </article>
+      </Link>
 
       <style jsx>{`
         a {
@@ -27,11 +27,17 @@ export const Post = ({ post }) => {
           margin-bottom: 2rem;
           border-radius: var(--radius5);
           padding: 1rem;
+          cursor: pointer;
+        }
+
+        article:hover {
+          box-shadow: 5px 5px 15px #ffc700, -5px -5px 15px #17a1f6;
+          transition: .2s;
         }
 
         @media (prefers-color-scheme: light) {
           article {
-            background: #d6d6d6;
+            background: #e2e2e2;
             border: 2px solid #ababab;
           }
 
