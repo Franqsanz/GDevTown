@@ -10,12 +10,18 @@ export const Post = ({ post }) => {
   return (
     <>
       <Link href={'/blog' + link}>
-        <article>
-          <HeadPost meta={meta} />
-        </article>
+        <a>
+          <article>
+            <HeadPost meta={meta} />
+          </article>
+        </a>
       </Link>
 
       <style jsx>{`
+        a {
+          text-decoration: none;
+        }
+
         article {
           margin-bottom: 2rem;
           border-radius: var(--radius5);

@@ -1,8 +1,7 @@
-
 export const HeadPost = ({ meta, isBlogPost }) => (
   <>
     <img src={meta.img} alt={meta.alt} />
-    <div className={isBlogPost ? 'contentDetailsNone' :'contentDetails'}>
+    <div className={isBlogPost? 'contentDetailsNone' :'contentDetails'}>
       <h1 className={isBlogPost? 'great-title' :null} >{meta.title}</h1>
       <div className='details'>
         {isBlogPost? null: <p>{meta.description}</p>}
@@ -12,7 +11,7 @@ export const HeadPost = ({ meta, isBlogPost }) => (
         </span> •
         <span>✍🏼 <a href={meta.postBy}>@Franqsanz</a></span>
       </div>
-      {isBlogPost ? null : <a className='aMore'>Leer más &rarr;</a>}
+      {isBlogPost? null: <a className='aMore'>Leer más &rarr;</a>}
     </div>
 
     <style jsx>{`
@@ -70,7 +69,7 @@ export const HeadPost = ({ meta, isBlogPost }) => (
 
       @media (max-width: 425px) {
         .great-title {
-          font-size: 1.7rem;
+          font-size: 1.6rem;
         }
       }
     `}</style>
