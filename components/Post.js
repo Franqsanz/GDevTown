@@ -12,21 +12,13 @@ export const Post = ({ post }) => {
       <Link href={'/blog' + link}>
         <article>
           <HeadPost meta={meta} />
-            <a>Leer más &rarr;</a>
         </article>
       </Link>
 
       <style jsx>{`
-        a {
-          color: var(--goldDark);
-          font-size: 1.14rem;
-          font-weight: bold;
-        }
-
         article {
           margin-bottom: 2rem;
           border-radius: var(--radius5);
-          padding: 1rem;
           cursor: pointer;
         }
 
@@ -37,12 +29,12 @@ export const Post = ({ post }) => {
 
         @media (prefers-color-scheme: light) {
           article {
-            background: #e2e2e2;
-            border: 2px solid #ababab;
+            background: #ededed;
+            border: 2px solid #cecece;
           }
 
           a {
-            color: #0f527b;
+            color: #1c6d9f;
           }
         }
 
