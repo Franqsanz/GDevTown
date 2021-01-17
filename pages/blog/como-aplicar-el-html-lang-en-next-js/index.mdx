@@ -1,0 +1,66 @@
+import BlogPost from '../../../components/BlogPost';
+
+export const meta = {
+  title: 'Como aplicar el "html lang" en next.js',
+  description: 'En este post súper breve te voy a enseñar cómo agregar el <html lang=""> en nuestro proyecto en next.js....',
+  date: 'Ene. 16, 2021',
+  readTime: 1,
+  postBy: 'https://twitter.com/franqsanz',
+  edit: 'https://github.com/Franqsanz/GDevTown/blob/main/pages/blog/como-aplicar-el-html-lang-en-next-js/index.mdx'
+}
+
+export default ({ children }) => <BlogPost meta={meta}>{children}</BlogPost>;
+
+En este post súper breve te voy a enseñar cómo agregar el `<html lang="">` en nuestro proyecto en next.js.
+Nosé si existe otra manera ya que no tengo mucha experiencia en next, si conoces otra manera déjalo en los comentarios. 😊
+
+En next.js hay una carpeta llamada "pages" que por ejemplo puede contener los siguientes archivos:
+
+* `_app.js`
+
+* `index.js`
+
+Aquí nosotros agregaremos un nuevo archivo llamado `_document.js`.
+
+> Es importante que tenga el `_` al principio.
+
+En este archivo importamos lo siguiente:
+
+```JS
+import Document, { Head, Html, Main, NextScript } from 'next/document';
+```
+
+Ahora agregamos el siguiente código:
+
+```JS
+import Document, { Head, Html, Main, NextScript } from 'next/document';
+
+class MyDocument extends Document {
+  render() {
+    return (
+      // Agregamos el idioma que deseemos, aquí por ejemplo español.
+      <Html lang="es">
+        <Head />
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
+  }
+}
+
+export default MyDocument;
+```
+
+Luego de agregar esto debes reiniciar el servidor local para que se agreguen los cambios.
+
+Y listo eso es todo, todas las etiquetas que se encuentran en la función son necesarias para que funcione correctamente.
+
+Más información sobre next/document en la documentación oficial: [Custom Document](https://nextjs.org/docs/advanced-features/custom-document).
+
+---
+
+Espero que este súper súper súper breve post te sea de ayuda! 😄
+
+Saludos!
