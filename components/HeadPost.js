@@ -49,6 +49,10 @@ export const HeadPost = ({ meta, isBlogPost }) => (
         .details {
           color: #464646;
         }
+       
+        h1 {
+          color: var(--colorGray);
+        }
 
         .aMore {
           color: #1c6d9f;
