@@ -86,7 +86,7 @@ export default function Layout({children, pageTitle, description, ...props }) {
           }
 
           blockquote {
-            background: var(--grayDark);
+            background: var(--black);
           }
 
           a {
@@ -136,7 +136,7 @@ export default function Layout({children, pageTitle, description, ...props }) {
         }
 
         blockquote {
-          border-left: 6px solid gold;
+          border-left: 5px solid var(--goldDark);
           margin-inline-start: 0;
           margin-inline-end: 0;
           border-radius: 0 var(--radius5) var(--radius5) 0;

@@ -1,6 +1,7 @@
 import BlogPost from '../../../components/BlogPost';
 
 export const meta = {
+  id: 10,
   title: 'Como aplicar el "html lang" en next.js',
   description: 'En este post súper breve te voy a enseñar cómo agregar el <html lang=""> en nuestro proyecto en next.js....',
   date: 'Ene. 16, 2021',
@@ -12,7 +13,7 @@ export const meta = {
 export default ({ children }) => <BlogPost meta={meta}>{children}</BlogPost>;
 
 En este post súper breve te voy a enseñar cómo agregar el `<html lang="">` en nuestro proyecto en next.js.
-Nosé si existe otra manera ya que no tengo mucha experiencia en next, si conoces otra manera déjalo en los comentarios. 😊
+Nosé si existe otra manera ya que no tengo mucha experiencia en next, si conoces otra manera puedes editar este post en github. 😊
 
 En next.js hay una carpeta llamada "pages" que por ejemplo puede contener los siguientes archivos:
 
@@ -57,7 +58,7 @@ Luego de agregar esto debes reiniciar el servidor local para que se agreguen los
 
 Y listo eso es todo, todas las etiquetas que se encuentran en la función son necesarias para que funcione correctamente.
 
-Más información sobre next/document en la documentación oficial: [Custom Document](https://nextjs.org/docs/advanced-features/custom-document).
+Más información sobre `next/document` en la documentación oficial: [Custom Document](https://nextjs.org/docs/advanced-features/custom-document).
 
 ---
 
