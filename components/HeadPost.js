@@ -1,8 +1,8 @@
 export const HeadPost = ({ meta, isBlogPost }) => (
   <>
-    <img src={meta.img} alt={meta.alt} />
+    {isBlogPost? <img src={meta.img} alt={meta.alt} /> :null}
     <div className={isBlogPost? 'contentDetailsNone' :'contentDetails'}>
-      <h1 className={isBlogPost? 'great-title' :null} >{meta.title}</h1>
+      <h1 className={isBlogPost? 'great-title' :null}>{meta.title}</h1>
       <div className='details'>
         {isBlogPost? null: <p>{meta.description}</p>}
         <span>{meta.date}</span> •
@@ -35,7 +35,7 @@ export const HeadPost = ({ meta, isBlogPost }) => (
       }
 
       .details {
-        margin-right: 1rem;
+        margin-bottom: 1rem;
       }
 
       .aMore {
@@ -53,7 +53,7 @@ export const HeadPost = ({ meta, isBlogPost }) => (
         .details {
           color: #464646;
         }
-       
+
         h1 {
           color: var(--colorGray);
         }
