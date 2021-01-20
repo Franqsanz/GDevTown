@@ -9,8 +9,7 @@ export const HeadPost = ({ meta, isBlogPost }) => (
         <span role='img' aria-label='Un Cafe'>
           ☕ {`${meta.readTime} min de lectura.`}
         </span> •
-        <span>✍🏼 <a href={meta.postBy}>@Franqsanz</a></span> •
-        <span>📝 <a href={meta.edit}>Edit post on GitHub</a></span>
+        <span>✍🏼 <a href={meta.postBy}>@Franqsanz</a></span>
       </div>
       {isBlogPost? null: <a className='aMore'>Leer más &rarr;</a>}
     </div>
@@ -21,7 +20,7 @@ export const HeadPost = ({ meta, isBlogPost }) => (
       }
 
       .contentDetailsNone {
-        padding: 0.9rem 0 0.5rem 0;
+        padding: 0.9rem 0 0.2rem 0;
       }
 
       h1 {
@@ -43,9 +42,14 @@ export const HeadPost = ({ meta, isBlogPost }) => (
         color: var(--goldDark);
         font-size: 1.14rem;
         font-weight: bold;
+        border-bottom: none;
       }
 
       @media (prefers-color-scheme: light) {
+        h1 {
+          color: var(--colorGray);
+        }
+
         .details {
           color: #464646;
         }

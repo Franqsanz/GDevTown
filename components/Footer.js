@@ -9,7 +9,7 @@ export default function Footer() {
         footer {
           padding: 1.7rem;
           text-align: center;
-          font-size: 0.9rem;
+          font-size: 0.8rem;
           background: #0c0c0c;
         }
 

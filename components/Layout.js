@@ -146,6 +146,11 @@ export default function Layout({children, pageTitle, description, ...props }) {
           padding: 0.7rem;
         }
 
+        a {
+          text-decoration: none;
+          border-bottom: 2px solid;
+        }
+
         pre {
           background: var(--grayDark);
           padding: 1rem 0.7rem 1rem 0.7rem;
