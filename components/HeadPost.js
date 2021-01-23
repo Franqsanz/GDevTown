@@ -8,8 +8,8 @@ export const HeadPost = ({ meta, isBlogPost }) => (
         <span>{meta.date}</span> •
         <span role='img' aria-label='Un Cafe'>
           ☕ {`${meta.readTime} min de lectura.`}
-        </span> •
-        <span>✍🏼 <a href={meta.postBy}>@Franqsanz</a></span>
+        </span>
+        {isBlogPost? <span>• ✍🏼 <a href={meta.postBy}>@Franqsanz</a></span> :null}
       </div>
       {isBlogPost? null: <a className='aMore'>Leer más &rarr;</a>}
     </div>
@@ -36,6 +36,7 @@ export const HeadPost = ({ meta, isBlogPost }) => (
 
       .details {
         margin-bottom: 1rem;
+        font-size: 0.9rem;
       }
 
       .aMore {
