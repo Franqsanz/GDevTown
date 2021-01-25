@@ -8,7 +8,7 @@ export const HeadPost = ({ meta, isBlogPost }) => (
     <div className={isBlogPost? 'contentDetailsNone' :'contentDetails'}>
       <h1 className={isBlogPost? 'great-title' :null}>{meta.title}</h1>
       <div className='details'>
-        {isBlogPost? null: <p>{meta.description}</p>}
+        {isBlogPost? null: <p className="pDescription">{meta.description}</p>}
         <span>{meta.date}</span> •
         <span role='img' aria-label='Un Cafe'>
           ☕ {`${meta.readTime} min de lectura.`}
@@ -48,6 +48,10 @@ export const HeadPost = ({ meta, isBlogPost }) => (
         font-size: 1.14rem;
         font-weight: bold;
         border-bottom: none;
+      }
+
+      .pDescription {
+        font-size: 1rem;
       }
 
       @media (prefers-color-scheme: light) {

@@ -12,7 +12,7 @@ export const Post = ({ post }) => {
       <Link href={'/blog' + link}>
         <a>
           <article>
-            <HeadPost meta={meta} />
+            <HeadPost meta={meta} key={meta} />
           </article>
         </a>
       </Link>

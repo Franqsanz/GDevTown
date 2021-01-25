@@ -3,7 +3,7 @@ import Footer from './Footer';
 import Header from './Header';
 import Sect from './SectMore';
 
-export default function Layout({children, pageTitle, description, ...props }) {
+export default function Layout({children, pageTitle, description }) {
   return (
     <>
       <Head>
@@ -133,8 +133,8 @@ export default function Layout({children, pageTitle, description, ...props }) {
 
         p {
           line-height: 1.77;
+          font-size: 1.13rem;
         }
-
         blockquote {
           border-left: 5px solid var(--goldDark);
           margin-inline-start: 0;

@@ -5,7 +5,7 @@ export default function IndexPage() {
   return (
     <>
       {posts.map((post) => (
-        <Post key={post.link} post={post} />
+        <Post key={post} post={post} />
       ))}
     </>
   );
