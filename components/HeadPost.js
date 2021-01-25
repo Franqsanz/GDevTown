@@ -1,6 +1,10 @@
 export const HeadPost = ({ meta, isBlogPost }) => (
   <>
-    {isBlogPost? <img src={meta.img} alt={meta.alt} /> :null}
+    {isBlogPost?
+      <a className="viewImg" href={meta.img}>
+        <img src={meta.img} alt={meta.alt} />
+      </a>
+    :null}
     <div className={isBlogPost? 'contentDetailsNone' :'contentDetails'}>
       <h1 className={isBlogPost? 'great-title' :null}>{meta.title}</h1>
       <div className='details'>

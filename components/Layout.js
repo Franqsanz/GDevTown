@@ -151,6 +151,10 @@ export default function Layout({children, pageTitle, description, ...props }) {
           border-bottom: 2px solid;
         }
 
+        .viewImg {
+          border-bottom: none;
+        }
+
         pre {
           background: var(--grayDark);
           padding: 1rem 0.7rem 1rem 0.7rem;
