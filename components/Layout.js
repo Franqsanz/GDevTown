@@ -126,7 +126,6 @@ export default function Layout({children, pageTitle, description }) {
           //   Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
           //   sans-serif;
             font-family: 'Raleway', sans-serif;
-          letter-spacing: 0.11rem;
         }
 
         .content {
