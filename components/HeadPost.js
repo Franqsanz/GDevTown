@@ -44,17 +44,13 @@ export const HeadPost = ({ meta, isBlogPost }) => (
         font-size: 2.5rem;
       }
 
-      .abackList {
-        font-size: 1.125rem;
-        border-bottom: none;
-      }
-
       .details {
         margin-bottom: 1rem;
         font-size: 0.9rem;
       }
 
-      .aMore {
+      .aMore,
+      .abackList {
         color: var(--goldDark);
         font-size: 1.14rem;
         font-weight: bold;
@@ -78,7 +74,8 @@ export const HeadPost = ({ meta, isBlogPost }) => (
           color: var(--colorGray);
         }
 
-        .aMore {
+        .aMore,
+        .abackList {
           color: #1c6d9f;
         }
       }
