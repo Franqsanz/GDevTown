@@ -1,5 +1,12 @@
+import Link from 'next/link';
+
 export const HeadPost = ({ meta, isBlogPost }) => (
   <>
+    {isBlogPost?
+      <Link href='/'>
+        <a className="abackList">← Volver</a>
+      </Link>
+    :null}
     {isBlogPost?
       <a className="viewImg" href={meta.img}>
         <img src={meta.img} alt={meta.alt} />
@@ -13,7 +20,6 @@ export const HeadPost = ({ meta, isBlogPost }) => (
         <span role='img' aria-label='Un Cafe'>
           ☕ {`${meta.readTime} min de lectura.`}
         </span>
-        {isBlogPost? <span>• ✍🏼 <a href={meta.postBy}>@Franqsanz</a></span> :null}
       </div>
       {isBlogPost? null: <a className='aMore'>Leer más &rarr;</a>}
     </div>
@@ -28,14 +34,19 @@ export const HeadPost = ({ meta, isBlogPost }) => (
       }
 
       h1 {
-        font-size: 1.5rem;
+        font-size: 1.7rem;
         font-weight: 700;
         margin-top: 0;
         color: var(--colorWhite);
       }
 
       .great-title {
-        font-size: 2rem;
+        font-size: 2.5rem;
+      }
+
+      .abackList {
+        font-size: 1.125rem;
+        border-bottom: none;
       }
 
       .details {
@@ -88,7 +99,7 @@ export const HeadPost = ({ meta, isBlogPost }) => (
 
       @media (max-width: 425px) {
         .great-title {
-          font-size: 1.6rem;
+          font-size: 1.8rem;
         }
       }
     `}</style>

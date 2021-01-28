@@ -46,9 +46,7 @@ export default function Layout({children, pageTitle, description }) {
       </Head>
 
       <style jsx global>{`
-        // @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap|Roboto:wght@400;700&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap');
-
         @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway&display=swap');
 
         :root {
@@ -109,9 +107,6 @@ export default function Layout({children, pageTitle, description }) {
         html,
         body {
           margin: 0;
-          // font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-          //   Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
-          //   sans-serif;
           font-size: 1rem;
           font-family: 'Open Sans', sans-serif;
         }
@@ -122,10 +117,7 @@ export default function Layout({children, pageTitle, description }) {
         h4,
         h5,
         h6 {
-          // font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-          //   Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
-          //   sans-serif;
-            font-family: 'Raleway', sans-serif;
+          font-family: 'Raleway', sans-serif;
         }
 
         .content {
@@ -136,7 +128,7 @@ export default function Layout({children, pageTitle, description }) {
 
         p {
           line-height: 1.77;
-          font-size: 1.13rem;
+          font-size: 1.125rem;
         }
 
         blockquote {
@@ -170,7 +162,6 @@ export default function Layout({children, pageTitle, description }) {
         code {
           font-family: 'Inconsolata', monospace;
           font-weight: 300;
-          font-size: 0.9rem;
           line-height: 1.66;
           color: gold;
           padding: 0.3rem;
@@ -217,6 +208,7 @@ export default function Layout({children, pageTitle, description }) {
         img {
           max-width: 100%;
           border-radius: var(--radius5);
+          margin-top: 0.5rem;
         }
 
         hr {
