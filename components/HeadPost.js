@@ -4,7 +4,7 @@ export const HeadPost = ({ meta, isBlogPost }) => (
   <>
     {isBlogPost?
       <Link href='/'>
-        <a className="abackList">← Volver</a>
+        <a className="abackList">← Volver a la Lista</a>
       </Link>
     :null}
     {isBlogPost?
@@ -38,10 +38,12 @@ export const HeadPost = ({ meta, isBlogPost }) => (
         font-weight: 700;
         margin-top: 0;
         color: var(--colorWhite);
+        line-height: 1.45;
       }
 
       .great-title {
         font-size: 2.5rem;
+        line-height: 1.45;
       }
 
       .details {

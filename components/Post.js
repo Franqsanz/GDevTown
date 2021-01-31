@@ -35,7 +35,7 @@ export const Post = ({ post }) => {
 
         @media (prefers-color-scheme: light) {
           article {
-            background: #ededed;
+            background: #f6f6f6;
             border: 2px solid #cecece;
           }
 

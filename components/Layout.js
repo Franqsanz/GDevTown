@@ -3,7 +3,7 @@ import Footer from './Footer';
 import Header from './Header';
 import Sect from './SectMore';
 
-export default function Layout({children, pageTitle, description }) {
+export default function Layout({ children, pageTitle, description, ...props }) {
   return (
     <>
       <Head>
@@ -58,8 +58,8 @@ export default function Layout({children, pageTitle, description }) {
           --radius5: 5px;
 
           // light theme
-          --whiteBackground: #f3f3f3;
-          --colorGray: #2a2a2a;
+          --whiteBackground: #ffffff;
+          --colorGray: #1a1a1a;
         }
 
         @media (prefers-color-scheme: light) {
@@ -70,7 +70,7 @@ export default function Layout({children, pageTitle, description }) {
           }
 
           blockquote {
-            background: #d6d6d6;
+            background: #ededed;
           }
 
           a {
@@ -132,7 +132,7 @@ export default function Layout({children, pageTitle, description }) {
         }
 
         blockquote {
-          border-left: 5px solid var(--goldDark);
+          border-left: 8px solid var(--goldDark);
           margin-inline-start: 0;
           margin-inline-end: 0;
           border-radius: 0 var(--radius5) var(--radius5) 0;
@@ -163,7 +163,7 @@ export default function Layout({children, pageTitle, description }) {
           font-family: 'Inconsolata', monospace;
           font-weight: 300;
           line-height: 1.66;
-          color: gold;
+          color: var(--goldDark);
           padding: 0.3rem;
           background: var(--grayDark);
           border-radius: var(--radius5);
@@ -208,7 +208,7 @@ export default function Layout({children, pageTitle, description }) {
         img {
           max-width: 100%;
           border-radius: var(--radius5);
-          margin-top: 0.5rem;
+          margin-top: 0.9rem;
         }
 
         hr {
