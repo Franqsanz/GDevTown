@@ -21,7 +21,6 @@ export const HeadPost = ({ meta, isBlogPost }) => (
           ☕ {`${meta.readTime} min de lectura.`}
         </span>
       </div>
-      {isBlogPost? null: <a className='aMore'>Leer más &rarr;</a>}
     </div>
 
     <style jsx>{`
@@ -47,7 +46,6 @@ export const HeadPost = ({ meta, isBlogPost }) => (
       }
 
       .details {
-        margin-bottom: 1rem;
         font-size: 0.9rem;
       }
 
@@ -90,10 +88,6 @@ export const HeadPost = ({ meta, isBlogPost }) => (
 
       span {
         margin: 0.4rem;
-      }
-
-      .details {
-        margin-bottom: 1rem;
       }
 
       @media (max-width: 425px) {

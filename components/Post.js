@@ -10,7 +10,7 @@ export const Post = ({ post }) => {
   return (
     <>
       <Link href={'/blog' + link}>
-        <a>
+        <a aria-label="Leer más">
           <article>
             <HeadPost meta={meta} key={meta} />
           </article>
