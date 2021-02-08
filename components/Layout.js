@@ -10,7 +10,7 @@ export default function Layout({ children, pageTitle, description, ...props }) {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
         <meta charSet='utf-8' />
-        <meta name='description' content={description} />
+        <meta name='Description' content={description} />
         <meta name="application-name" content={pageTitle} />
         <meta name='image' content="/icons/favicon32.png" />
         <meta name="apple-mobile-web-app-title" content={pageTitle} />
@@ -47,7 +47,7 @@ export default function Layout({ children, pageTitle, description, ...props }) {
 
       <style jsx global>{`
         @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&family=Raleway&display=swap');
 
         :root {
           --goldDark: #ffc700;
@@ -76,6 +76,11 @@ export default function Layout({ children, pageTitle, description, ...props }) {
           a {
             color: #1c6d9f;
           }
+
+          code {
+            background: #ededed;
+            color: #1c6d9f;
+          }
         }
 
         @media (prefers-color-scheme: dark) {
@@ -91,6 +96,11 @@ export default function Layout({ children, pageTitle, description, ...props }) {
 
           a {
             color: #17a1f6;
+          }
+
+          code {
+            background: var(--grayDark);
+            color: var(--goldDark);
           }
         }
 
@@ -163,9 +173,7 @@ export default function Layout({ children, pageTitle, description, ...props }) {
           font-family: 'Inconsolata', monospace;
           font-weight: 300;
           line-height: 1.66;
-          color: var(--goldDark);
           padding: 0.3rem;
-          background: var(--grayDark);
           border-radius: var(--radius5);
         }
 
@@ -181,7 +189,7 @@ export default function Layout({ children, pageTitle, description, ...props }) {
           color: lime;
         }
 
-        .language-html {
+        .language-HTML {
           color: gold;
         }
 
@@ -198,11 +206,16 @@ export default function Layout({ children, pageTitle, description, ...props }) {
         }
 
         .language-JS,
-        .language-html,
-        .language-CSS {
+        .language-HTML,
+        .language-CSS,
+        .language-SH,
+        .language-GraphQL,
+        .language-TOML,
+        .language-JSON {
           padding: none
           background: transparent;
           border-radius: 0;
+          background: var(--grayDark);
         }
 
         img {
