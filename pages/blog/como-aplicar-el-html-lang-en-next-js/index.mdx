@@ -2,7 +2,7 @@ import BlogPost from '../../../components/BlogPost';
 
 export const meta = {
   id: 10,
-  title: 'Como aplicar el "html lang" en next.js',
+  title: 'Cómo aplicar el "html lang" en next.js',
   description: 'En este post súper breve te voy a enseñar cómo agregar el <html lang=""> en nuestro proyecto en next.js....',
   date: 'Ene. 16, 2021',
   readTime: 1
@@ -25,13 +25,13 @@ Aquí nosotros agregaremos un nuevo archivo llamado `_document.js`.
 
 En este archivo importamos lo siguiente:
 
-```JS
+```js
 import Document, { Head, Html, Main, NextScript } from 'next/document';
 ```
 
 Ahora agregamos el siguiente código:
 
-```JS
+```js
 import Document, { Head, Html, Main, NextScript } from 'next/document';
 
 class MyDocument extends Document {

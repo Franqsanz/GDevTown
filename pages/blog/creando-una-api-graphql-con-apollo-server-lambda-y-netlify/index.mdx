@@ -30,7 +30,7 @@ Instalar las siguientes dependencias:
 
 Una vez que tengamos nuestras dependencias instaladas abrimos el `package.json` y en el campo `scripts` colocamos lo siguiente:
 
-```JSON
+```json
 "scripts": {
   "start": "netlify-lambda serve src",
   "build": "netlify-lambda build src"
@@ -43,7 +43,7 @@ Ahora creemos un archivo `js` con el nombre graphql y requerimos ApolloServer.
 
 Un ejemplo a continuación.
 
-```JS
+```js
 const { ApolloServer } = require('apollo-server-lambda');
 
 const server = new ApolloServer({});
@@ -51,7 +51,7 @@ const server = new ApolloServer({});
 exports.handler = server.createHandler();
 ```
 Ahora podemos ejecutar nuestra api
-```SH
+```bash
 $ npm start
 
 # o con yarn
@@ -71,7 +71,7 @@ En una API GraphQL necesitamos crear esquemas o también llamados definición de
 
 Creamos un nuevo archivo.
 
-```JS
+```js
 const { gql } = require('apollo-server-lambda');
 
 const typeDefs = gql`
@@ -98,7 +98,7 @@ En GraphQL existen los `resolvers`, que son los que resolverán nuestro `typeDef
 
 Creamos un nuevo archivo.
 
-```JS
+```js
 // Ejemplo si los datos estarían en un archivo estático.
 const users = require('./data');
 
@@ -115,7 +115,7 @@ Aquí es donde nosotros haríamos las consultas a la base de datos o aún archiv
 
 Volvemos al archivo graphql
 
-```JS
+```js
 const { ApolloServer } = require('apollo-server-lambda');
 const typeDefs = require('./typeDefs');
 const resolvers = require('./resolvers');
@@ -133,7 +133,7 @@ Ahora si volvemos a ejecutar nuestra API esta vez podremos hacer consultas en el
 
 Ejemplo:
 
-```GraphQL
+```graphql
 query allUsers {
   Users {
    id
@@ -144,8 +144,9 @@ query allUsers {
  }
 }
 ```
+
 Respuesta:
-```JSON
+```json
 {
  "data": {
   "Users": [
@@ -166,7 +167,7 @@ Este archivo debe ir en la raíz del proyecto.
 
 Ejemplo de como se ve un archivo `netlify.toml`:
 
-```TOML
+```toml
 [build]
   command = "npm run build" # o con yarn: "yarn build".
   functions = "functions" # este comando creará una carpeta llamada "functions" y guardara las funciones Lambda.

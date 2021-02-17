@@ -163,8 +163,7 @@ export default function Layout({ children, pageTitle, description, ...props }) {
         }
 
         pre {
-          background: var(--grayDark);
-          padding: 1rem 0.7rem 1rem 0.7rem;
+          padding: 1rem 0.7rem 0 0.7rem;
           border-radius: var(--radius5);
           overflow: auto;
         }
@@ -175,47 +174,6 @@ export default function Layout({ children, pageTitle, description, ...props }) {
           line-height: 1.66;
           padding: 0.3rem;
           border-radius: var(--radius5);
-        }
-
-        .language-JS {
-          color: tomato;
-        }
-
-        .language-JSON {
-          color: orange;
-        }
-
-        .language-SH {
-          color: lime;
-        }
-
-        .language-HTML {
-          color: gold;
-        }
-
-        .language-CSS {
-          color: #17a1f6;
-        }
-
-        .language-GraphQL {
-          color: #ff87e1;
-        }
-
-        .language-TOML {
-          color: #63c9c1;
-        }
-
-        .language-JS,
-        .language-HTML,
-        .language-CSS,
-        .language-SH,
-        .language-GraphQL,
-        .language-TOML,
-        .language-JSON {
-          padding: none
-          background: transparent;
-          border-radius: 0;
-          background: var(--grayDark);
         }
 
         img {

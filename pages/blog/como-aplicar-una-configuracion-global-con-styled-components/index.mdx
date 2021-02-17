@@ -22,14 +22,14 @@ Existen varias librerías pero en este caso solo hablaré de Styled Components y
 
 Creamos un archivo llamado `index.js` o `global.js` o el nombre que tú quieras y luego importamos Styled Components.
 
-```JS
+```js
 import { createGlobalStyle } from "styled-components";
 ```
 Forma de aplicar la configuración global.
 
 Ejemplo:
 
-```JS
+```js
 import { createGlobalStyle } from "styled-components";
 
 export const Global = createGlobalStyle`
@@ -56,7 +56,7 @@ export const Global = createGlobalStyle`
 ```
 Luego debemos importar nuestra configuración global en el archivo principal de nuestro proyecto, por ejemplo en el `index.js`
 
-```JS
+```js
 import React from "react";
 import { render } from "react-dom";
 import { Header, Footer } from "./components/index";
@@ -82,7 +82,7 @@ Está librería fue creada por [Vercel](https://vercel.com/) la empresa que desa
 
 Para poder utilizar `Styled JSX` se debe hacer lo siguiente:
 
-```JS
+```js
 <style jsx>{``}</style>
 ```
 
@@ -92,7 +92,7 @@ Para aplicar la configuración global se debe colocar el atributo `global` despu
 
 Ejemplo:
 
-```JS
+```js
 <style jsx global>{`
   :root {
     --text-color: violet;
@@ -115,7 +115,7 @@ En NextJS la configuración global debería estar en el archivo `Layout.js`, tam
 
 Ejemplo de `Layout.js`:
 
-```JS
+```js
 import Head from 'next/head'
 
 export default function Layout({ children, pageTitle, description, ...props }) {
