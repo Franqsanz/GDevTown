@@ -2,7 +2,7 @@ export default function MoreInfo() {
   return (
     <>
       <section>
-        <h3>Todos estos artículos están disponibles en <a href="https://dev.to/franqsanz">DEV Community.</a></h3>
+        <h1>Todos estos artículos están disponibles en <a href="https://dev.to/franqsanz">DEV Community.</a></h1>
       </section>
 
       <style jsx>{`
@@ -28,7 +28,7 @@ export default function MoreInfo() {
           }
         }
 
-        h3 {
+        h1 {
           font-size: 0.9rem;
         }
       `}</style>

@@ -40,9 +40,17 @@ export const HeadPost = ({ meta, isBlogPost }) => (
         line-height: 1.45;
       }
 
+      h1:hover {
+        text-decoration: underline;
+      }
+
       .great-title {
         font-size: 2.5rem;
         line-height: 1.45;
+      }
+
+      .great-title:hover {
+         text-decoration: none;
       }
 
       .details {
