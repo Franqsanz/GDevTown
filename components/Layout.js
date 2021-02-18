@@ -39,10 +39,11 @@ export default function Layout({ children, pageTitle, description, ...props }) {
         <link rel="canonical" href="https://gdevtown.netlify.app/" />
         <link rel="apple-touch-icon"  href="/icons/apple-touch-icon192.png" sizes="192x192" />
         <link rel="apple-touch-icon"  href="/icons/apple-touch-icon180.png" sizes="180x180" />
-
         <link rel="manifest" href="/icons/site.webmanifest" />
         <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#17a1f6" />
+        <meta name="msapplication-TileImage" content="/icons/mstile-150x150.png" />
         <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="msapplication-config" content="/icons/browserconfig.xml" />
         <link rel="icon" type="image/png" href="/icons/favicon72.png" sizes="72x72" />
         <link rel="icon" type="image/png" href="/icons/favicon64.png" sizes="64x64" />
         <link rel="icon" type="image/png" href="/icons/favicon32.png" sizes="32x32" />
