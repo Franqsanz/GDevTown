@@ -37,11 +37,17 @@ export default function Layout({ children, pageTitle, description, ...props }) {
         <meta property="og:image:height" content="650" />
 
         <link rel="canonical" href="https://gdevtown.netlify.app/" />
+        <link rel="apple-touch-icon"  href="/icons/apple-touch-icon192.png" sizes="192x192" />
         <link rel="apple-touch-icon"  href="/icons/apple-touch-icon180.png" sizes="180x180" />
+
+        <link rel="manifest" href="/icons/site.webmanifest" />
+        <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#17a1f6" />
+        <meta name="msapplication-TileColor" content="#da532c" />
         <link rel="icon" type="image/png" href="/icons/favicon72.png" sizes="72x72" />
         <link rel="icon" type="image/png" href="/icons/favicon64.png" sizes="64x64" />
         <link rel="icon" type="image/png" href="/icons/favicon32.png" sizes="32x32" />
         <link rel="icon" type="image/png" href="/icons/favicon16.png" sizes="16x16" />
+        <link rel="shortcut icon" href="/icons/favicon.ico" sizes="48x48" />
         <title>{pageTitle}</title>
       </Head>
 
