@@ -54,7 +54,9 @@ export default function Layout({ children, pageTitle, description, ...props }) {
 
       <style jsx  global>{`
         @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&family=Raleway&display=swap');
+        // @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&family=Raleway&display=swap');
+
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway:wght@500&display=swap');
 
         :root {
           --goldDark: #ffc700;

@@ -15,7 +15,7 @@ export const HeadPost = ({ meta, isBlogPost }) => (
     <div className={isBlogPost? 'contentDetailsNone' :'contentDetails'}>
       <h1 className={isBlogPost? 'great-title' :null}>{meta.title}</h1>
       <div className='details'>
-        {isBlogPost? null: <p className="pDescription">{meta.description}</p>}
+        {/* {isBlogPost? null: <p className="pDescription">{meta.description}</p>} */}
         <span>{meta.date}</span> •
         <span role='img' aria-label='Un Cafe'>
           ☕ {`${meta.readTime} min de lectura.`}
@@ -37,7 +37,7 @@ export const HeadPost = ({ meta, isBlogPost }) => (
         font-weight: 700;
         margin-top: 0;
         color: var(--colorWhite);
-        line-height: 1.45;
+        line-height: 1.25;
       }
 
       h1:hover {
@@ -46,7 +46,7 @@ export const HeadPost = ({ meta, isBlogPost }) => (
 
       .great-title {
         font-size: 2.5rem;
-        line-height: 1.45;
+        line-height: 1.25;
       }
 
       .great-title:hover {
