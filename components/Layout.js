@@ -78,10 +78,6 @@ export default function Layout({ children, pageTitle, description, ...props }) {
             color: var(--colorGray);
           }
 
-          blockquote {
-            background: #ededed;
-          }
-
           a {
             color: #1c6d9f;
           }
@@ -97,10 +93,6 @@ export default function Layout({ children, pageTitle, description, ...props }) {
           body {
             background: var(--grayBackground);
             color: var(--colorWhite);
-          }
-
-          blockquote {
-            background: var(--black);
           }
 
           a {
@@ -156,6 +148,8 @@ export default function Layout({ children, pageTitle, description, ...props }) {
           margin-inline-end: 0;
           border-radius: 0 var(--radius5) var(--radius5) 0;
           font-style: italic;
+          background: #ffe488;
+          color: var(--colorGray);
         }
 
         blockquote p {
@@ -172,7 +166,7 @@ export default function Layout({ children, pageTitle, description, ...props }) {
         }
 
         pre {
-          padding: 1rem 0.7rem 0 0.7rem;
+          padding: 1.5rem 1.5rem 0 1.5rem;
           border-radius: var(--radius5);
           overflow: auto;
         }

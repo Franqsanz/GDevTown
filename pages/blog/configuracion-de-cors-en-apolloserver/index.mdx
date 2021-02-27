@@ -1,0 +1,80 @@
+import BlogPost from '../../../components/BlogPost';
+
+export const meta = {
+  id: 6,
+  img: '/static/cors-error.png',
+  alt: 'CORS Error',
+  title: 'Configuración de CORS en ApolloServer',
+  description: 'Tenía un error con CORS en mí API GraphQL que está construida con Apollo Server Lambda, cuando hacía una solicitud desde el frontend me daba el típico error en la consola....',
+  date: 'Feb. 27, 2021',
+  readTime: 2
+}
+
+export default ({ children }) => <BlogPost meta={meta}>{children}</BlogPost>;
+
+Tenía un error con CORS en mí API GraphQL que está construida con Apollo Server Lambda, cuando hacía una solicitud desde el frontend me daba el típico error en la consola, que más de uno/a debe haber visto alguna vez.
+Pero yo me preguntaba, si en mí API, sí agregue la opción de CORS, entonces ¿Dónde está el problema?
+
+## Sobre `ApolloServer()`
+El `ApolloServer()` puede recibir muchas opciones, uno es el objeto CORS pero este no funciona o en mí caso no funcionó.
+
+Un ejemplo:
+
+```js
+const { ApolloServer } = require('apollo-server-lambda');
+const { typeDefs, resolvers } = require('./graphql/index');
+
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+  // En teoría esto debería funcionar.
+  cors: {
+    origin: '*',
+    credentials: true
+  }
+});
+```
+
+## Solución
+Después de buscar en internet encontré una solución en github. 😎
+
+> Vuelvo a aclarar que está solución es aplicándola en **Apollo Server Lambda**, la verdad que no tengo idea si está solución funciona también en el resto de módulos de Apollo Server, creería que es lo mismo, pero la verdad que no lo sé.
+
+La solución que encontré fue eliminar CORS de `ApolloServer()` y pasarlo al `server.createHandler()` que es lo que vamos a exportar.
+
+Pasamos exactamente el mismo objeto CORS.
+
+Ejemplo:
+
+```js
+exports.handler = server.createHandler({
+  cors: {
+    origin: '*',
+    credentials: true
+  }
+});
+```
+
+Y acá el código completo para que se entienda mejor:
+
+```js
+const { ApolloServer } = require('apollo-server-lambda');
+const { typeDefs, resolvers } = require('./graphql/index');
+
+const server = new ApolloServer({
+  typeDefs,
+  resolvers
+});
+
+exports.handler = server.createHandler({
+  cors: {
+    origin: '*',
+    credentials: true
+  }
+});
+```
+
+## Conclusión
+Eso fue todo lo que tuve que hacer, solamente cambiar de lugar el objeto CORS.
+
+¡¡Saludos!! 🤙🏻

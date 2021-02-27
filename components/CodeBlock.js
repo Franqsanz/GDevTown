@@ -1,5 +1,5 @@
 import Highlight, { defaultProps } from 'prism-react-renderer';
-import shadesOfPurple from 'prism-react-renderer/themes/vsDark';
+import shadesOfPurple from 'prism-react-renderer/themes/shadesOfPurple';
 import React from 'react';
 
 export default function codeH ({ children, className }) {
