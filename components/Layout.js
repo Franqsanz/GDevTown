@@ -148,7 +148,7 @@ export default function Layout({ children, pageTitle, description, ...props }) {
           margin-inline-end: 0;
           border-radius: 0 var(--radius5) var(--radius5) 0;
           font-style: italic;
-          background: #ffe488;
+          background: #ffe796;
           color: var(--colorGray);
         }
 
@@ -166,7 +166,7 @@ export default function Layout({ children, pageTitle, description, ...props }) {
         }
 
         pre {
-          padding: 1.5rem 1.5rem 0 1.5rem;
+          padding: 0.7rem 0.7rem 0 0.7rem;
           border-radius: var(--radius5);
           overflow: auto;
         }

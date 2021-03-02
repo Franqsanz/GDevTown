@@ -13,7 +13,7 @@ export const meta = {
 export default ({ children }) => <BlogPost meta={meta}>{children}</BlogPost>;
 
 Tenía un error con CORS en mí API GraphQL que está construida con Apollo Server Lambda, cuando hacía una solicitud desde el frontend me daba el típico error en la consola, que más de uno/a debe haber visto alguna vez.
-Pero yo me preguntaba, si en mí API, sí agregue la opción de CORS, entonces ¿Dónde está el problema?
+Pero yo me pregunté, en mí API, sí agregué la opción de CORS, entonces ¿Dónde está el problema?
 
 ## Sobre `ApolloServer()`
 El `ApolloServer()` puede recibir muchas opciones, uno es el objeto CORS pero este no funciona o en mí caso no funcionó.
@@ -78,3 +78,5 @@ exports.handler = server.createHandler({
 Eso fue todo lo que tuve que hacer, solamente cambiar de lugar el objeto CORS.
 
 ¡¡Saludos!! 🤙🏻
+
+📝 [Editar en GitHub](https://github.com/Franqsanz/GDevTown/blob/main/pages/blog/configuracion-de-cors-en-apolloserver/index.mdx)
