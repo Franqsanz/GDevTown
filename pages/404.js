@@ -20,7 +20,7 @@ export default function NotFound() {
         }
 
         span {
-          font-size: 3rem;
+          font-size: 2rem;
           padding: 0.7rem;
         }
 
