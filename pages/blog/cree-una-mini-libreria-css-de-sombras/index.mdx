@@ -1,0 +1,80 @@
+import BlogPost from '../../../components/BlogPost';
+
+export const meta = {
+  img: '/static/shadow.jpg',
+  alt: 'Cover image for Mini librería CSS',
+  title: 'Cree una mini librería CSS de sombras',
+  description: 'Me puse a crear un proyecto de fin de semana (que no lo hice en un fin de semana 🙃)....',
+  date: 'Abr. 27, 2021',
+  readTime: 2
+}
+
+export default ({ children }) => <BlogPost meta={meta}>{children}</BlogPost>;
+
+Me puse a crear un proyecto de fin de semana (que no lo hice en un fin de semana 🙃), se trata de una librería CSS de sombras, se me ocurrió porque tenía curiosidad de como crear una.
+Es algo básico pero siempre se aprende algo nuevo al crear proyectos.
+
+## Como funciona
+Hay dos formas de usar esta librería:
+
+1. De forma tradicional descargando un archivo `.css`
+2. Instalando desde npm.
+
+### Echemos un vistazo a lo tradicional:
+Enlazamos el archivo como cualquier otro archivo `.css`
+
+```html
+<head>
+ <link rel="stylesheet" href="./shadows.min.css">
+</head>
+```
+Esta librería solo contiene **clases**, entonces hacemos lo siguiente:
+
+```html
+<div class="sw-b-30-b"></div>
+
+<!--
+  Está clase contiene una sombra tipo blur de 30px posicionada en la línea inferior del elemento,
+  el nombre completo sería así: "shadows-blur-30-botton".
+-->
+```
+Para saber todas las clases que existen puedes leer la [Documentación](https://github.com/Franqsanz/box-shadows.css).
+
+Hay tres tipos de sombras:
+
+- Efecto Blur.
+- Efecto Solid.
+- Efecto multi sombra(experimental).
+
+### Echemos un vistazo al paquete npm:
+Decidí crear un paquete porque me pareció interesante poder usarlo con Styled Components o otro framework de CSS-in-JS.
+
+Instalamos el paquete:
+
+```bash
+npm install box-shadows
+```
+Acá un ejemplo con Styled Components:
+```js
+import styled from "styled-components";
+import { sw_b_20_b } from "box-shadows";
+
+const Card = styled.div`
+  width: 200px;
+  height: 200px;
+  box-shadow: ${sw_b_20_b};
+`;
+```
+
+## Conclusión
+Seguramente existen otros proyectos parecidos y que estén mejor desarrollados, en mi caso solo fue crear algo por solo curiosidad.
+De todas formas me gustó hacer esto.
+
+## Enlaces
+[Sitio web](https://cssshadows.netlify.app/)
+[Documentación](https://github.com/Franqsanz/box-shadows.css)
+[Paquete npm](https://www.npmjs.com/package/box-shadows)
+
+Saludos!
+
+📝 [Editar en GitHub](https://github.com/Franqsanz/GDevTown/blob/main/pages/blog/cree-una-mini-libreria-css-de-sombras/index.mdx)

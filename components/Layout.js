@@ -54,8 +54,6 @@ export default function Layout({ children, pageTitle, description, ...props }) {
 
       <style jsx  global>{`
         @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap');
-        // @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&family=Raleway&display=swap');
-
         @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway:wght@500&display=swap');
 
         :root {
@@ -193,6 +191,10 @@ export default function Layout({ children, pageTitle, description, ...props }) {
           border-radius: var(--radius5);
           margin-block-start: 1.5em;
           margin-block-end: 1.5em;
+        }
+
+        ol, ul {
+          font-size: 1.125rem;
         }
       `}</style>
       <main>
