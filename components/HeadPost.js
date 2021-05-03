@@ -9,7 +9,11 @@ export const HeadPost = ({ meta, isBlogPost }) => (
     :null}
     {isBlogPost?
       <a className="viewImg" href={meta.img}>
-        <img src={meta.img} alt={meta.alt} />
+        <img src={meta.img}
+            alt={meta.alt}
+            width={meta.width}
+            height={meta.height}
+        />
       </a>
     :null}
     <div className={isBlogPost? 'contentDetailsNone' :'contentDetails'}>
