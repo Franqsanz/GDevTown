@@ -54,7 +54,7 @@ export default function Layout({ children, pageTitle, description, ...props }) {
 
       <style jsx  global>{`
         @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway:wght@500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
 
         :root {
           --goldDark: #ffc700;
@@ -117,7 +117,7 @@ export default function Layout({ children, pageTitle, description, ...props }) {
         body {
           margin: 0;
           font-size: 1rem;
-          font-family: 'Open Sans', sans-serif;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,  Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
 
         h1,
@@ -174,6 +174,7 @@ export default function Layout({ children, pageTitle, description, ...props }) {
           font-weight: 300;
           line-height: 1.66;
           padding: 0.3rem;
+          font-size: 1rem;
           border-radius: var(--radius5);
         }
 
