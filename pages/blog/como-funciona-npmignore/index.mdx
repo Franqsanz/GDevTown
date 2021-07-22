@@ -1,0 +1,38 @@
+import BlogPost from '../../../components/BlogPost';
+
+export const meta = {
+  title: '¿Cómo funciona npmignore?',
+  description: 'Si alguna vez te pusiste a desarrollar un paquete para publicar en npm, seguro te pusiste a pensar....',
+  date: 'Jul. 05, 2021',
+  readTime: 1
+}
+
+export default ({ children }) => <BlogPost meta={meta}>{children}</BlogPost>;
+
+Si alguna vez te pusiste a desarrollar un paquete para publicar en npm, seguro te pusiste a pensar 🤔:
+
+- ¿Cómo hago para ignorar X archivo para que no se publique en npm?
+- ¿Con `.gitignore` es suficiente?
+- ¿Cuándo debo usar un `.npmignore`?
+
+Con `.gitignore` si puedes ignorar archivos, pero a veces no quieres ignorar X archivo y ahí es donde entra `.npmignore`.
+
+**Por ejemplo:** desarrollaste un paquete y a su vez un sitio web para su documentación. Si deseas tener todo en un mismo proyecto, es ahí donde es necesario un `.npmignore` porque no vas a publicar todos los archivos de la web en npm, solo el paquete.
+
+Cuando npm no encuentra un `.npmignore` utiliza el `.gitignore` para ignorar los archivos.
+
+¿Cómo se ve?
+```bash
+# Ejemplo de un .npmignore
+
+img/
+css/
+index.html
+```
+Como puedes ver es exactamente igual a un `.gitignore`.
+
+Puedes verificar si tu paquete ignorará los archivos que incluiste en `.npmignore` ejecutando `npm pack`, éste comando generará un [tarball](https://en.m.wikipedia.org/wiki/Tar_(computing)) localmente que sería exactamente lo mismo que hace npm al publicarlo.
+
+Para saber más puedes leer los [documentos](https://docs.npmjs.com/cli/v7/using-npm/developers#keeping-files-out-of-your-package).
+
+Espero que este post super corto te sea de ayuda. 😃

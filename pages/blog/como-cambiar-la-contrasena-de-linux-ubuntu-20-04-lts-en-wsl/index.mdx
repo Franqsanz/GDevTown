@@ -1,0 +1,62 @@
+import BlogPost from '../../../components/BlogPost';
+
+export const meta = {
+  title: 'Cómo cambiar la contraseña de Linux(Ubuntu 20.04 LTS) en WSL',
+  description: 'Seguramente alguna vez te has olvidado la contraseña en Linux y no sabes cómo cambiarla (cosa que a mí me ha pasado algunas veces 😅). La verdad es bastante fácil de hacer.....',
+  date: 'Jul. 20, 2021',
+  readTime: 1
+}
+
+export default ({ children }) => <BlogPost meta={meta}>{children}</BlogPost>;
+
+Seguramente alguna vez te has olvidado la contraseña en Linux y no sabes cómo cambiarla (cosa que a mí me ha pasado algunas veces 😅). La verdad es bastante fácil de hacer.
+
+___Puedes leer este [artículo](https://itsfoss.com/reset-linux-password-wsl/) para más detalles.___
+
+En este caso voy hablar de cómo restablecer o cambiar la contraseña en Ubuntu 20.04 LTS ya que es la distribución que estoy utilizando en WSL, pero si usas otra distribución échale un vistazo al link que deje arriba!
+
+## Son tres simples pasos
+
+### 1️⃣ Cambiar a root como usuario predeterminado
+Aquí debe abrir un terminal de **cmd** de Windows y ejecutar el siguiente comando:
+
+```bash
+# cmd
+config --default-user root
+```
+Debe colocar `ubuntu2004` antes del comando.
+Obviamente en el lugar de `user` y `username` debe colocar su usuario.
+
+Ejemplo:
+```bash
+# cmd
+C:\Users\user>ubuntu2004 config --default-user root
+```
+### 2️⃣ Cambia la contraseña
+Aquí debe abrir un terminal de **wsl** y ejecutar el siguiente comando:
+```bash
+# wsl
+passwd username
+```
+Le pedirá que ingresé su nueva contraseña y luego confirmarla
+
+Ejemplo:
+```bash
+# wsl
+root@user:/home/username# passwd username
+New password:
+Retype new password:
+passwd: password updated successfully
+```
+### 3️⃣ Vuelva a establecer su usuario como predeterminado
+```bash
+# cmd
+config --default-user username
+```
+Ejemplo:
+```bash
+# cmd
+C:\Users\user>ubuntu2004 config --default-user username
+```
+
+Y listo ya sabes cómo cambiar la contraseña o restablecerla! 🎉
